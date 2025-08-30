@@ -5,7 +5,6 @@
 #include "common/Interface_d.h"
 #include "common/Handlers_d.h"
 #include "common/Transceiver.h"
-#include "FDrive/FDrive_d.h"
 #include "FreqMeter/FreqMeter_d.h"
 #include "Generator/Calibrator.h"
 #include "Generator/Generator_d.h"
@@ -133,7 +132,6 @@ void DHandlers::Processing(SimpleMessage *msg)
     case Command::FDrive_CreateFile:
     case Command::FDrive_WriteToFile:
     case Command::FDrive_CloseFile:
-        func = DDrive::Handler::Processing;
         break;
     case Command::SingleStart : func = SingleStart; break;
     }
