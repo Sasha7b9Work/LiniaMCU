@@ -4,7 +4,7 @@
 #include "Hardware/CPU.h"
 #include "Hardware/Timer.h"
 #include "Hardware/HAL/HAL.h"
-#include <limits>
+#include <climits>
 #include <stm32f407xx.h>
 
 
