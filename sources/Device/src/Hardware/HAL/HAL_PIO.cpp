@@ -132,68 +132,6 @@ uint8 HAL_PIO::Read(HPort::E port, uint16 pin)
 }
 
 
-void HAL_PIO::Init()
-{
-    StructPIN writePins[] =
-    {
-        {WR_AD9952_SPI3_CSA  },
-        {WR_AD9952_SPI3_CSB  },
-        {WR_AD9952_IO_UPD    },
-        {WR_AD9952_IOSYNA    },
-        {WR_AD9952_IOSYNB    },
-        {WR_AD9952_RES_DDS   },
-        {WR_P1_AMPL_A        },
-        {WR_P2_AMPL_B        },
-        {WR_OUT_A            },
-        {WR_OUT_B            },
-        {WR_AD5697_OFFSET    },
-        {WR_AD5697_FREQ      },
-        {WR_AD5697_D_RSA     },
-        {WR_AD5697_D_RSB     },
-        {WR_FPGA_WR_RG       },
-        {WR_FPGA_CLK_RG      },
-        {WR_FPGA_DT_RG       },
-        {WR_FPGA_A0_RG       },
-        {WR_FPGA_A1_RG       },
-        {WR_FPGA_A2_RG       },
-        {WR_FPGA_A3_RG       },
-        {WR_FPGA_WR_DATA     },
-        {WR_FREQ_METER_RESIST},
-        {WR_FREQ_METER_COUPLE},
-        {WR_FREQ_METER_FILTR },
-        {WR_FREQ_METER_CLK   },
-        {WR_CPU_BUSY         },
-        {HPort::Count, 0}
-    };
-
-    StructPIN *str = writePins;
-
-    while(str->port != HPort::Count)
-    {
-        Init(str->port, str->pin, HMode::Output_PP, HPull::No, HSpeed::High);
-        Reset(str->port, str->pin);
-
-        str++;
-    }
-
-    StructPIN readPins[] =
-    {
-        {RD_FREQ_METER_DRY },
-        {RD_FREQ_METER_DATA},
-        {HPort::Count, 0}
-    };
-
-    str = readPins;
-
-    while(str->port != HPort::Count)
-    {
-        Init(str->port, str->pin, HMode::Input, HPull::Down);
-        
-        str++;
-    }
-}
-
-
 void HAL_PIO::WriteFPGA(uint8 byte)
 {
     //                                                                                 биты 0,1                                    биты 2,3

@@ -107,9 +107,6 @@ struct HAlternate
 
 namespace HAL_PIO
 {
-    // Начальная инициализация управляющих выводов
-    void Init();
-
     void Init(HPort::E port, uint pins, HMode::E mode, HPull::E pull, HSpeed::E speed = HSpeed::Low, HAlternate::E alternate = HAlternate::AF0_MCO);
     // Установка в "1"
     void Set(HPort::E port, uint16 pin);

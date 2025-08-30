@@ -20,8 +20,6 @@ void HAL::Init()
     EnablePeriphery();
 
     HAL_Init();
-
-    HAL_PIO::Init();
 }
 
 
