@@ -4,9 +4,9 @@ project (Device)
 set(CMAKE_UNITY_BUILD OFF)
 
 include_directories(
-    ../common/_VS_KEIL
-    ../common/_VS_KEIL/CMSIS
-    ../common/_VS_KEIL/std_includes
+    ../Common/_VS_KEIL
+    ../Common/_VS_KEIL/CMSIS
+    ../Common/_VS_KEIL/std_includes
     src
     ..
     ../common/libs/STM32Cube_F4/Drivers/CMSIS/Device/ST/STM32F4xx/Include
