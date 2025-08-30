@@ -25,6 +25,8 @@ XP13 Источник напряжения 3 кВ
 10  PF0     ENRGF       XP7:18
     USB
 101 PA9     VBUS        XP8:2
+103 PA11    D1-         DD3:3
+104 PA12    D1+         DD3:1
     Источник U 50 V
 42  PA6     50E+        XP10:15
 49  PF11    50E-        XP10:16
@@ -49,9 +51,6 @@ XP13 Источник напряжения 3 кВ
 92  PG7     CLK_Rg      DD1.2:71
 93  PG8     Wr_Rg       DD1.2:72
 82  PD13    DAT_Rg      DD1.2:49
-
-103 PA11    D1-         DD3:3
-104 PA12    D1+         DD3:1
 
 77  PD8     DAT1_DAC    DA5:4
 76  PB15    DAT2_DAC    DA6:4
