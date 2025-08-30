@@ -210,3 +210,24 @@ void  USBD_LL_Delay(uint32_t delay)
 {
     HAL_TIM::Delay(delay);
 }
+
+
+USBD_StatusTypeDef USBD_LL_PrepareReceive(USBD_HandleTypeDef *pdev, 
+                                          uint8_t ep_addr,
+                                          uint8_t *pbuf,
+                                          uint32_t size)
+{
+  HAL_PCD_EP_Receive((PCD_HandleTypeDef *)pdev->pData, ep_addr, pbuf, size);
+  return USBD_OK;
+}
+
+
+USBD_StatusTypeDef USBD_LL_Transmit(USBD_HandleTypeDef *pdev, 
+                                    uint8_t ep_addr,
+                                    uint8_t *pbuf,
+                                    uint32_t size)
+{
+  HAL_PCD_EP_Transmit((PCD_HandleTypeDef *)pdev->pData, ep_addr, pbuf, size);
+  return USBD_OK;
+}
+
