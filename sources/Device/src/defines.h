@@ -4,7 +4,6 @@
 
 
 #if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
-    #pragma clang diagnostic ignored "-Wundefined-func-template"
     #pragma clang diagnostic ignored "-Wold-style-cast"
     #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
     #pragma clang diagnostic ignored "-Wpadded"
