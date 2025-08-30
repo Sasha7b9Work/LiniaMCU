@@ -55,7 +55,7 @@ extern PinOut pMEAS_I_ENRGI;    //      11  Разрешение регистра
 
 // Формирователь развёртки
 extern PinOut pRAZV_ENDU;       // PC15 9   Разрешение измерителя U блока развёртки
-extern PinOut pRAZV_ENRGF;      // PF0  10  Разршение регистра
+extern PinOut pRAZV_ENRGF;      // PF0  10  Разрешение регистра
 
 // Источник 50V
 extern PinOut pSOURCE_50V_50EP; // PA6  42
