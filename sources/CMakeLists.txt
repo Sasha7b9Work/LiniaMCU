@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.9)
+cmake_minimum_required(VERSION 3.10)
 
 # Set CMake policy required by UrhoCommon module
 if (COMMAND cmake_policy)
@@ -22,6 +22,3 @@ set(CMAKE_UNITY_BUILD ON)
 set (TARGET_NAME LiniaMCU)
 
 add_subdirectory(Device)
-add_subdirectory(DLoader)
-add_subdirectory(Panel)
-add_subdirectory(PLoader)

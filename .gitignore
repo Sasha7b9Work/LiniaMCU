@@ -1,0 +1,6 @@
+*.uvgui*.*
+
+sources/generated/*
+sources/Device/Objects/*
+sources/Device/Listings/*
+sources/Device/DebugConfig/*
