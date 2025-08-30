@@ -1,6 +1,5 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "common/Interface_d.h"
 #include "Hardware/Timer.h"
 #include "Hardware/HAL/HAL.h"
 #include "Utils/Debug.h"
@@ -40,7 +39,6 @@ extern "C" {
     void OTG_HS_IRQHandler()
     {
         // VCP
-        HAL_PCD::IRQHandler();
     }
     
     

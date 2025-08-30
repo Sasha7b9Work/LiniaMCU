@@ -966,41 +966,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>libs/USBD</GroupName>
-          <Files>
-            <File>
-              <FileName>usbd_ctlreq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ioreq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ctlreq.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ioreq.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_cdc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_cdc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc\usbd_cdc.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
@@ -1022,16 +987,6 @@
               <FileName>Timer.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Hardware\Timer.h</FilePath>
-            </File>
-            <File>
-              <FileName>VCP_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\VCP_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>VCP_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\VCP_d.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1064,29 +1019,9 @@
               <FilePath>.\src\Hardware\HAL\HAL.cpp</FilePath>
             </File>
             <File>
-              <FileName>HAL_CRC32.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\HAL\HAL_CRC32.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HAL_EEPROM.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\HAL\HAL_EEPROM.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HAL_I2C1.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\HAL\HAL_I2C1.cpp</FilePath>
-            </File>
-            <File>
               <FileName>HAL_IT.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\HAL\HAL_IT.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HAL_PCD.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\HAL\HAL_PCD.cpp</FilePath>
             </File>
             <File>
               <FileName>HAL_PINS.h</FileName>
@@ -1102,16 +1037,6 @@
               <FileName>HAL_PIO.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\HAL\HAL_PIO.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HAL_SPI1.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\HAL\HAL_SPI1.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HAL_SPI3.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\HAL\HAL_SPI3.cpp</FilePath>
             </File>
             <File>
               <FileName>HAL_TIM.cpp</FileName>
@@ -1132,51 +1057,6 @@
               <FileName>stm32f4xx_hal_conf.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Hardware\HAL\stm32f4xx_hal_conf.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Hardware/USBD</GroupName>
-          <Files>
-            <File>
-              <FileName>usbd_cdc_interface.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_cdc_interface.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_cdc_interface.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_cdc_interface.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_conf.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_conf.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_conf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_conf.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_core.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Common\libs\STM32Cube_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_core.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_core.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_core.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_desc.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_desc.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_desc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\USBD\usbd_desc.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1212,206 +1092,6 @@
               <FileName>defines_com.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Common\defines_com.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>common</GroupName>
-          <Files>
-            <File>
-              <FileName>Command.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Common\Command.h</FilePath>
-            </File>
-            <File>
-              <FileName>Command.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Common\Command.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Common.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Common.h</FilePath>
-            </File>
-            <File>
-              <FileName>Common.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Common.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Handlers_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Handlers_d.h</FilePath>
-            </File>
-            <File>
-              <FileName>Interface_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Interface_d.h</FilePath>
-            </File>
-            <File>
-              <FileName>Interface_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Interface_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Messages.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Messages.h</FilePath>
-            </File>
-            <File>
-              <FileName>Messages.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Messages.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Transceiver.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Transceiver.h</FilePath>
-            </File>
-            <File>
-              <FileName>Transceiver_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Transceiver_d.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>FreqMeter</GroupName>
-          <Files>
-            <File>
-              <FileName>FreqMeter_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\FreqMeter\FreqMeter_d.h</FilePath>
-            </File>
-            <File>
-              <FileName>FreqMeter_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\FreqMeter\FreqMeter_d.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Generator</GroupName>
-          <Files>
-            <File>
-              <FileName>AD5697.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\AD5697.h</FilePath>
-            </File>
-            <File>
-              <FileName>AD5697.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\AD5697.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>AD9952.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\AD9952.h</FilePath>
-            </File>
-            <File>
-              <FileName>AD9952.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\AD9952.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Generator_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\Generator_d.h</FilePath>
-            </File>
-            <File>
-              <FileName>Generator_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\Generator_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Calibrator.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\Calibrator.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Calibrator.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\Calibrator.h</FilePath>
-            </File>
-            <File>
-              <FileName>Filtr.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\Filtr.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Filtr.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\Filtr.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Generator/FPGA</GroupName>
-          <Files>
-            <File>
-              <FileName>FPGA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\FPGA\FPGA.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>FPGA.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\FPGA\FPGA.h</FilePath>
-            </File>
-            <File>
-              <FileName>RegistersFPGA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\FPGA\RegistersFPGA.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>RegistersFPGA.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\FPGA\RegistersFPGA.h</FilePath>
-            </File>
-            <File>
-              <FileName>Clock.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\FPGA\Clock.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Clock.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\FPGA\Clock.h</FilePath>
-            </File>
-            <File>
-              <FileName>ParametersFPGA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\FPGA\ParametersFPGA.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ParametersFPGA.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\FPGA\ParametersFPGA.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Interface</GroupName>
-          <Files>
-            <File>
-              <FileName>Handlers_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Interface\Handlers_d.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Settings</GroupName>
-          <Files>
-            <File>
-              <FileName>CalibrationSettings.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Settings\CalibrationSettings.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>CalibrationSettings.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Settings\CalibrationSettings.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1457,16 +1137,6 @@
               <FileName>Memory.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Utils\Memory.h</FilePath>
-            </File>
-            <File>
-              <FileName>Queue.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Utils\Queue.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Queue.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Utils\Queue.h</FilePath>
             </File>
             <File>
               <FileName>String.cpp</FileName>
