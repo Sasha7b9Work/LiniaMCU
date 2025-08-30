@@ -2,6 +2,22 @@
 #pragma once
 
 
+struct Port
+{
+    enum E
+    {
+        _A,
+        _B,
+        _C,
+        _D,
+        _E,
+        _F,
+        _G,
+        Count
+    };
+};
+
+
 struct PinMode
 {
     enum E
@@ -16,7 +32,28 @@ class Pin
 {
 public:
 
-    Pin(void *port, uint16 pin, PinMode::E);
+    enum E
+    {
+        _0,
+        _1,
+        _2,
+        _3,
+        _4,
+        _5,
+        _6,
+        _7,
+        _8,
+        _9,
+        _10,
+        _11,
+        _12,
+        _13,
+        _14,
+        _15,
+        Count
+    };
+
+    Pin(Port::E, Pin::E, PinMode::E);
 
 private:
 
@@ -28,13 +65,15 @@ private:
 
 class PinIn : public Pin
 {
-
+public:
+    PinIn(Port::E port, Pin::E pin) : Pin(port, pin, PinMode::In) { }
 };
 
 
 class PinOut : public Pin
 {
-
+public:
+    PinOut(Port::E port, Pin::E pin) : Pin(port, pin, PinMode::Out) { }
 };
 
 
