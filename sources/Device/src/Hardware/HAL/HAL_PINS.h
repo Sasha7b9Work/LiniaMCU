@@ -34,5 +34,5 @@
 //#define WR_D7                   HPort::_E, HPin::_10
 
 // Пины чтения
-#define RD_FREQ_METER_DRY       HPort::_C, HPin::_0     // Пин чтения готовности частотомера к выдаче данных
-#define RD_FREQ_METER_DATA      HPort::_B, HPin::_12    // Пин чтения данных
+//#define RD_FREQ_METER_DRY       HPort::_C, HPin::_0     // Пин чтения готовности частотомера к выдаче данных
+//#define RD_FREQ_METER_DATA      HPort::_B, HPin::_12    // Пин чтения данных
