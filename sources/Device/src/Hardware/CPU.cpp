@@ -46,7 +46,7 @@ void CPU::SetReady()
 {
     while (HAL_TIM::TimeMS() - timeBusy < 2)
     {
-    };
+    }
 
     HAL_PIO::Set(WR_CPU_BUSY);
 }

@@ -20,6 +20,11 @@
 #ifndef STM32F4xx_HAL_CRC_H
 #define STM32F4xx_HAL_CRC_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Wpadded"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -177,5 +182,9 @@ HAL_CRC_StateTypeDef HAL_CRC_GetState(const CRC_HandleTypeDef *hcrc);
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
 
 #endif /* STM32F4xx_HAL_CRC_H */

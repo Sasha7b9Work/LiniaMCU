@@ -10,10 +10,10 @@ struct Chan
         B,
         Count
     } value;
-    explicit Chan(uint8 v) : value((E)v) {};
-    explicit Chan(E v) : value(v)   {};
-    bool IsA() const                { return value == A; };
-    bool IsB() const                { return value == B; };
+    explicit Chan(uint8 v) : value((E)v) {}
+    explicit Chan(E v) : value(v)   {}
+    bool IsA() const                { return value == A; }
+    bool IsB() const                { return value == B; }
     bool Is(const Chan &ch) const   { return value == ch.value; }
     operator uint8()        const   { return (uint8)value; }
     Chan GetInverse()               { return (value == A) ? Chan(B) : Chan(A); }
@@ -36,7 +36,7 @@ struct FreqResist
     bool Is(E v) const { return value == v; };
     FreqResist(E v) : value(v) {};
     FreqResist(uint v) : value((E)v) {};
-    operator uint() const { return (uint)value; };
+    operator uint() const { return (uint)value; }
 };
 
 // Открытый/закрытый вход частотомера
@@ -47,10 +47,10 @@ struct FreqCouple
         AC,
         DC
     } value;
-    FreqCouple(E v) : value(v) {};
-    FreqCouple(uint v) : value((E)v) {};
-    bool Is(E v) const { return v == value; };
-    operator uint() const { return (uint)value; };
+    FreqCouple(E v) : value(v) {}
+    FreqCouple(uint v) : value((E)v) {}
+    bool Is(E v) const { return v == value; }
+    operator uint() const { return (uint)value; }
 };
 
 // ФНЧ частотомера
@@ -61,10 +61,10 @@ struct FreqFiltr
         Disable,
         Enable
     } value;
-    FreqFiltr(E v) : value(v) {};
-    FreqFiltr(uint v) : value((E)v) {};
-    bool Is(E v) const { return v == value; };
-    operator uint() const { return (uint)value; };
+    FreqFiltr(E v) : value(v) {}
+    FreqFiltr(uint v) : value((E)v) {}
+    bool Is(E v) const { return v == value; }
+    operator uint() const { return (uint)value; }
 };
 
 

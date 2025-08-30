@@ -1,6 +1,6 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "common/Interface_d.h"
+#include "Common/Interface_d.h"
 #include "Hardware/CPU.h"
 #include "Hardware/VCP_d.h"
 #include "Hardware/HAL/HAL.h"

@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 
-Buffer::Buffer(uint _size) : buffer(0), size(0)
+Buffer::Buffer(uint _size) : buffer(nullptr), size(0)
 {
     Allocate(_size);
 }

@@ -19,7 +19,7 @@ struct Block
 {
     uint8 *address;   // Адрес выделенного блока памяти
     uint size;      // Размер выделенного блока памяти
-    Block *Next() { return 0; };
+    Block *Next() { return nullptr; }
 };
 
 
@@ -82,12 +82,12 @@ static uint8 *FindRegion(uint /*size*/)
 {
     Block *block = FirstBlock();
 
-    while (block->address != 0)
+    while (block->address != nullptr)
     {
         block = block->Next();
     }
     
-    return 0;
+    return nullptr;
 }
 
 
@@ -110,7 +110,7 @@ static Block *FindBlockWithAddress(const uint8 *address)
 
 static Block *FirstBlock()
 {
-    if (firstBlock->address == 0)
+    if (firstBlock->address == nullptr)
     {
         return nullptr;
     }

@@ -1,6 +1,6 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "common/Messages.h"
+#include "Common/Messages.h"
 #include "Queue.h"
 
 
@@ -27,7 +27,7 @@ void Queue::Pop()
 
 bool Queue::Push(SimpleMessage *message)
 {
-    if (last < SIZE - 1)
+    if (last < (int)SIZE - 1)
     {
         storage[last] = message;
         last++;

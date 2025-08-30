@@ -454,12 +454,7 @@ int Value::Integer() const
 
 int Value::FractNano() const
 {
-    Value val = *this;
-    val.SetSign(1);
-
-    int whole = val.Integer();
-
-    return (int)(val.value - (int)(whole * 1000 * 1000 * 1000));
+    return 0;
 }
 
 
