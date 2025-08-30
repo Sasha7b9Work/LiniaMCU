@@ -259,7 +259,7 @@ void AD9952::WriteToHardware(const Chan &ch, Register::E reg, uint value)
     volatile int i = 0;
     for (; i < 1000; ++i)
     {
-    };
+    }
     HAL_PIO::Reset(WR_AD9952_IO_UPD);
 
     HAL_PIO::Set(cs);

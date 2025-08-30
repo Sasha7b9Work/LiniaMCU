@@ -20,6 +20,12 @@
 #ifndef __STM32F4xx_HAL_DMA_H
 #define __STM32F4xx_HAL_DMA_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Weverything"
+#endif
+
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -797,6 +803,10 @@ uint32_t             HAL_DMA_GetError(DMA_HandleTypeDef *hdma);
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
 
 #endif /* __STM32F4xx_HAL_DMA_H */
 

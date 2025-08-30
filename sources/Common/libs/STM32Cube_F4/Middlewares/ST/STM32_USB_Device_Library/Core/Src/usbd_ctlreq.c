@@ -17,6 +17,14 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+    #pragma clang diagnostic ignored "-Wbad-function-cast"
+    #pragma clang diagnostic ignored "-Wundef"
+#endif
+
+
 #include "usbd_ctlreq.h"
 #include "usbd_ioreq.h"
 

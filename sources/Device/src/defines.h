@@ -30,6 +30,12 @@
     #pragma clang diagnostic ignored "-Wnonportable-include-path"
     #pragma clang diagnostic ignored "-Wextra-semi"
     #pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
+    #pragma clang diagnostic ignored "-Wdouble-promotion"
+    #pragma clang diagnostic ignored "-Wimplicit-fallthrough"
+    #pragma clang diagnostic ignored "-Wsign-conversion"
+    #pragma clang diagnostic ignored "-Wcovered-switch-default"
+    #pragma clang diagnostic ignored "-Wmissing-braces"
+    #pragma clang diagnostic ignored "-Wdeprecated-copy-with-user-provided-copy"
 #endif
 
 

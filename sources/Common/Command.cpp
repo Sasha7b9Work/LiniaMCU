@@ -74,7 +74,7 @@ cstr Command::Name() const
     
     // \todo Здесь страшный баг - при большинстве других значений SIZE процессор виснет, даже не заходя в функцию Command::Trace()
     // Возможно, это происходит из-за использования CCM RAM
-    const int SIZE = 23;
+    const int SIZE = 30;
     static char buffer[SIZE + 1];
     std::snprintf(buffer, SIZE, "Неправильный параметр %d", value);
 

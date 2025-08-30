@@ -20,6 +20,11 @@
 #ifndef __USBD_DEF_H
 #define __USBD_DEF_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Weverything"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -511,6 +516,11 @@ __STATIC_INLINE uint16_t SWAPBYTE(uint8_t *addr)
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
+
 
 #endif /* __USBD_DEF_H */
 

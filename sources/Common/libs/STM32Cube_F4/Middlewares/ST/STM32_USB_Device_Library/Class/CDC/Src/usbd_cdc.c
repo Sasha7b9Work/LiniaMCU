@@ -55,6 +55,14 @@
 - "stm32xxxxx_{eval}{discovery}_io.c"
 EndBSPDependencies */
 
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+    #pragma clang diagnostic ignored "-Wpadded"
+    #pragma clang diagnostic ignored "-Wdeclaration-after-statement"
+#endif
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc.h"
 #include "usbd_ctlreq.h"

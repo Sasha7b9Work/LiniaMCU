@@ -25,7 +25,7 @@
 #define USBD_ErrLog(...)  Log_Write(__VA_ARGS__)
 #define USBD_DbgLog(...)  Log_Write(__VA_ARGS__)
 #else
-#define USBD_UsrLog(...) {}
-#define USBD_ErrLog(...) {}
-#define USBD_DbgLog(...) {}
+#define USBD_UsrLog(...)
+#define USBD_ErrLog(...)
+#define USBD_DbgLog(...)
 #endif

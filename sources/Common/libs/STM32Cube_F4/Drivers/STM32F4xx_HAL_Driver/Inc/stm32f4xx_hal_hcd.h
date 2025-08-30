@@ -20,6 +20,11 @@
 #ifndef STM32F4xx_HAL_HCD_H
 #define STM32F4xx_HAL_HCD_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Wpadded"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -324,5 +329,9 @@ uint32_t                HAL_HCD_GetCurrentSpeed(HCD_HandleTypeDef *hhcd);
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
 
 #endif /* STM32F4xx_HAL_HCD_H */

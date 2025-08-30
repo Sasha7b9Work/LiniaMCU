@@ -57,7 +57,7 @@ static void EraseSector(uint startAddress)
         return;
     }
 
-    CLEAR_FLASH_FLAGS;
+    CLEAR_FLASH_FLAGS
 
     HAL_FLASH_Unlock();
 
@@ -107,7 +107,7 @@ static uint GetSector(uint address)
 
 static void WriteData(uint dest, void *src, uint size)
 {
-    CLEAR_FLASH_FLAGS;
+    CLEAR_FLASH_FLAGS
 
     HAL_FLASH_Unlock();
 

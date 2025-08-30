@@ -36,6 +36,8 @@
 #define HAL_TIM_MODULE_ENABLED
 #define HAL_PCD_MODULE_ENABLED
 
+#define USBD_USER_REGISTER_CALLBACK 0
+
 /* ########################## HSE/HSI Values adaptation ##################### */
 /**
   * @brief Adjust the value of External High Speed oscillator (HSE) used in your application.

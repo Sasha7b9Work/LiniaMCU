@@ -20,6 +20,12 @@
 #ifndef __USB_CDC_H
 #define __USB_CDC_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Weverything"
+#endif
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -175,6 +181,10 @@ uint8_t USBD_CDC_ReceivePacket(USBD_HandleTypeDef *pdev);
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
 
 #endif  /* __USB_CDC_H */
 /**

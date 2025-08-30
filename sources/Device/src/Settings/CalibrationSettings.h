@@ -1,12 +1,12 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #pragma once
-#include "common/Command.h"
-#include "common/CommonTypes.h"
+#include "Common/Command.h"
+#include "Common/CommonTypes.h"
 #include "Generator/Calibrator.h"
 
 
 #ifndef WIN32
-#pragma anon_unions
+//#pragma anon_unions
 #endif
 
 

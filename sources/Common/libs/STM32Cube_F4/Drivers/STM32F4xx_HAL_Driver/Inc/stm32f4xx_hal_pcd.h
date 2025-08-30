@@ -20,6 +20,12 @@
 #ifndef STM32F4xx_HAL_PCD_H
 #define STM32F4xx_HAL_PCD_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Weverything"
+#endif
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -457,5 +463,9 @@ PCD_StateTypeDef HAL_PCD_GetState(PCD_HandleTypeDef const *hpcd);
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
 
 #endif /* STM32F4xx_HAL_PCD_H */

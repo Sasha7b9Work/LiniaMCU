@@ -20,6 +20,11 @@
 #ifndef __USBD_CORE_H
 #define __USBD_CORE_H
 
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic push 
+    #pragma clang diagnostic ignored "-Wundef"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -161,6 +166,10 @@ USBD_DescHeaderTypeDef *USBD_GetNextDesc(uint8_t *pbuf, uint16_t *ptr);
 #ifdef __cplusplus
 }
 #endif
+
+#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    #pragma clang diagnostic pop
+#endif 
 
 #endif /* __USBD_CORE_H */
 
