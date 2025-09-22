@@ -4,4 +4,6 @@ sources/generated/*
 sources/Device/RTE/*
 sources/Device/Objects/*
 sources/Device/Listings/*
+sources/Device/Objects-Debug/*
+sources/Device/Listings-Debug/*
 sources/Device/DebugConfig/*
