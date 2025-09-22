@@ -1,6 +1,7 @@
 *.uvgui*.*
 
 sources/generated/*
+sources/Device/RTE/*
 sources/Device/Objects/*
 sources/Device/Listings/*
 sources/Device/DebugConfig/*
