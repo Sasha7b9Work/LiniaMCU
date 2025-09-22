@@ -2,13 +2,17 @@
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
 #include "Hardware/Timer.h"
+#include "Device/Device.h"
 
 
 int main()
 {
     HAL::Init();
-    HAL_TIM::Delay(500);             // Задержка нужна для того, чтобы AD9952 успел пройти внутреннюю инициализацию
-  
+
+    HAL_TIM::Delay(500);
+
+    Device::Init();
+
     while (1)
     {
     }

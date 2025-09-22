@@ -1003,6 +1003,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\Device\Device.h</FilePath>
             </File>
+            <File>
+              <FileName>FPGA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\FPGA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FPGA.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\FPGA.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2148,6 +2158,16 @@
               <FileName>Device.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Device.h</FilePath>
+            </File>
+            <File>
+              <FileName>FPGA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\FPGA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FPGA.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\FPGA.h</FilePath>
             </File>
           </Files>
         </Group>
