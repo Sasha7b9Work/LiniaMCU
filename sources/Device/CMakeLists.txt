@@ -110,19 +110,7 @@ file(GLOB HARDWARE_HAL   src/Hardware/HAL/*)
 file(GLOB HARDWARE_USBD  src/Hardware/USBD/*)
 file(GLOB HARDWARE_USBH  src/Hardware/USBH/*)
 file(GLOB SRC            src/*.h src/*.cpp)
-file(GLOB COMMON         ../common/Command.*
-                         ../common/Common.*
-                         ../common/Handlers_d.h
-                         ../common/Interface_d.*
-                         ../common/Messages.*
-                         ../common/Transceiver.h
-                         ../common/Transceiver_d.cpp)
-file(GLOB FDRIVE         src/FDrive/*.*)
-file(GLOB FREQMETER      src/FreqMeter/*.*)
-file(GLOB GENERATOR      src/Generator/*.*)
-file(GLOB GENERATOR_FPGA src/Generator/FPGA/*.*)
-file(GLOB INTERFACE      src/Interface/*.*)
-file(GLOB SETTINGS       src/Settings/*.*)
+file(GLOB DEVICE         src/Device/*.*)
 file(GLOB UTILS          src/Utils/*.*)
 
 set_source_files_properties(${LIBS_FATFS} ${LIBS_HAL} ${LIBS_USBD} ${LIBS_USBH} PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -138,13 +126,7 @@ source_group(Hardware/HAL    FILES ${HARDWARE_HAL})
 source_group(Hardware/USBD   FILES ${HARDWARE_USBD})
 source_group(Hardware/USBH   FILES ${HARDWARE_USBH})
 source_group(src             FILES ${SRC})
-source_group(common          FILES ${COMMON})
-source_group(FDrive          FILES ${FDRIVE})
-source_group(FreqMeter       FILES ${FREQMETER})
-source_group(Generator       FILES ${GENERATOR})
-source_group(Generator/FPGA  FILES ${GENERATOR_FPGA})
-source_group(Interface       FILES ${INTERFACE})
-source_group(Settings        FILES ${SETTINGS})
+source_group(Device          FILES ${DEVICE})
 source_group(Utils           FILES ${UTILS})
 
 add_library(${PROJECT_NAME}
@@ -159,12 +141,6 @@ add_library(${PROJECT_NAME}
     ${HARDWARE_USBD}
     ${HARDWARE_USBH}
     ${SRC}
-    ${COMMON}
-    ${FDRIVE}
-    ${FREQMETER}
-    ${GENERATOR}
-    ${GENERATOR_FPGA}
-    ${INTERFACE}
-    ${SETTINGS}
+    ${DEVICE}
     ${UTILS}
 )
