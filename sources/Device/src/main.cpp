@@ -19,12 +19,23 @@ int main()
 
     while (1)
     {
+        static int i = 0;
+        
         if (meter.ElapsedTime() > 100)
         {
             meter.Reset();
 
-            pchar message = "Hi";
-
+            static char message[3] = { 'H', 'i', '\0' };
+            
+            message[1] = 'i' + i;
+            
+            i++;
+            
+            if(i > 5)
+            {
+                i = 0;
+            }
+            
             HAL_USART1::Transmit(message, (int)std::strlen(message));
         }
     }
