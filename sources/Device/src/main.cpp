@@ -19,7 +19,7 @@ int main()
 
     while (1)
     {
-        if (meter.ElapsedTime() > 5000)
+        if (meter.ElapsedTime() > 100)
         {
             meter.Reset();
 
