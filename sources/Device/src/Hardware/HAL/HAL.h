@@ -16,22 +16,6 @@ namespace HAL
 };
 
 
-namespace HAL_I2C1
-{
-    void Init();
-
-    void Transmit(uint8 address, uint8 data[3]);
-};
-
-
-namespace HAL_SPI3
-{
-    void Init();
-    // Запускает счётчик для измерения малых отрезков времени
-    void Transmit(uint8 *buffer, uint16 num);
-};
-
-
 namespace HAL_TIM
 {
     uint TimeMS();
@@ -60,3 +44,10 @@ namespace HAL_TIM3
 
     void StopIT();
 };
+
+namespace HAL_USART1
+{
+    void Init();
+
+    void Transmit(const void *buffer, int size);
+}

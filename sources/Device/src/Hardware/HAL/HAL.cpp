@@ -19,6 +19,8 @@ void HAL::Init()
     EnablePeriphery();
 
     HAL_Init();
+
+    HAL_USART1::Init();
 }
 
 
@@ -79,10 +81,8 @@ void HAL::EnablePeriphery()
     __HAL_RCC_GPIOG_CLK_ENABLE();
     __HAL_RCC_GPIOH_CLK_ENABLE();
 
-    __HAL_RCC_FSMC_CLK_ENABLE();
-    __HAL_RCC_I2C1_CLK_ENABLE();
-    __HAL_RCC_SPI1_CLK_ENABLE();
-    __HAL_RCC_SPI3_CLK_ENABLE();    // AD9952
+
+    __HAL_RCC_USART1_CLK_ENABLE();      // Orange Pi 5 Plus
 }
 
 
