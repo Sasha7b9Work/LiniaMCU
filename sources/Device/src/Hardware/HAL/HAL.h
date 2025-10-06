@@ -5,14 +5,14 @@
 struct CalibrationSettings;
 
 
-#define ERROR_HANDLER() HAL::ErrorHandler()
+#define ERROR_HANDLER() HAL::ErrorHandler(__FILE__, __LINE__)
 
 
 namespace HAL
 {
     void Init();
 
-    void ErrorHandler();
+    void ErrorHandler(pchar, int);
 };
 
 
@@ -50,4 +50,6 @@ namespace HAL_USART1
     void Init();
 
     void Transmit(const void *buffer, int size);
+
+    extern void *handle;       // UART_HandleTypeDef
 }

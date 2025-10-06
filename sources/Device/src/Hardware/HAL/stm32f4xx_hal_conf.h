@@ -35,8 +35,10 @@
 #define HAL_SPI_MODULE_ENABLED
 #define HAL_TIM_MODULE_ENABLED
 #define HAL_PCD_MODULE_ENABLED
+#define HAL_UART_MODULE_ENABLED
 
-#define USBD_USER_REGISTER_CALLBACK 0
+#define USBD_USER_REGISTER_CALLBACK     0
+#define USE_HAL_UART_REGISTER_CALLBACKS 0
 
 /* ########################## HSE/HSI Values adaptation ##################### */
 /**

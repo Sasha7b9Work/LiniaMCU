@@ -1,6 +1,7 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
+#include "Utils/Log.h"
 #include <stm32f4xx_hal.h>
 
 
@@ -108,10 +109,7 @@ void HAL_MspInit()
 }
 
 
-void HAL::ErrorHandler()
+void HAL::ErrorHandler(pchar file, int line)
 {
-    while(true)
-    {
-
-    }
+    LOG_ERROR("A critical hardware error occurred in %s:%d", file, line);
 }

@@ -6,7 +6,7 @@
 #include <cstring>
 
 
-void Log::AddString(char *format, ...) //-V2560
+void Log::AddString(pchar format, ...) //-V2560
 {
     char string[100];
 
