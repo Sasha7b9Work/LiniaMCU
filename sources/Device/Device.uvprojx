@@ -984,11 +984,6 @@
               <FilePath>.\src\structs.h</FilePath>
             </File>
             <File>
-              <FileName>defines_com.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Common\defines_com.h</FilePath>
-            </File>
-            <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\main.cpp</FilePath>
@@ -2228,11 +2223,6 @@
               <FileName>structs.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\structs.h</FilePath>
-            </File>
-            <File>
-              <FileName>defines_com.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Common\defines_com.h</FilePath>
             </File>
             <File>
               <FileName>main.cpp</FileName>

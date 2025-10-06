@@ -110,6 +110,12 @@ extern "C" {
         }
     }
 
+
+    void USART1_IRQHandler(void)
+    {
+        HAL_UART_IRQHandler((UART_HandleTypeDef *)HAL_USART1::handle);
+    }
+
 #ifdef __cplusplus
 }
 #endif

@@ -58,7 +58,6 @@ void HAL_USART1::Transmit(const void *buffer, int size)
 }
 
 
-void USART1_IRQHandler(void)
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-    HAL_UART_IRQHandler((UART_HandleTypeDef *)HAL_USART1::handle);
 }

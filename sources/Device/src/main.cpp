@@ -3,6 +3,10 @@
 #include "Hardware/HAL/HAL.h"
 #include "Hardware/Timer.h"
 #include "Device/Device.h"
+#include <cstring>
+
+
+static TimeMeterMS meter;
 
 
 int main()
@@ -15,5 +19,13 @@ int main()
 
     while (1)
     {
+        if (meter.ElapsedTime() > 5000)
+        {
+            meter.Reset();
+
+            pchar message = "Hi";
+
+            HAL_USART1::Transmit(message, (int)std::strlen(message));
+        }
     }
 }
