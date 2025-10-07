@@ -64,6 +64,17 @@ void HAL_USART1::Transmit(const void *_buffer, int size)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
 {
+    static char buffer[100];
+    static int pointer = 0;
+
+    buffer[pointer++] = (char)HAL_USART1::buffer;
+    buffer[pointer + 1] = 0x00;
+
+    if (HAL_USART1::buffer == 0x00)
+    {
+        pointer = pointer;
+    }
+
     HAL_UART_Receive_IT(_handle, &HAL_USART1::buffer, 1);
 
     HAL_UART_Transmit(_handle, &HAL_USART1::buffer, 1, 100);
