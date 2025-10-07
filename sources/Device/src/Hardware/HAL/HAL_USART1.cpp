@@ -21,6 +21,8 @@ namespace HAL_USART1
     };
 
     void *handle = &h;
+
+    static uint8 buffer = 0;
 }
 
 
@@ -49,15 +51,20 @@ void HAL_USART1::Init()
     {
         ERROR_HANDLER();
     }
+
+    HAL_UART_Receive_IT(&h, &buffer, 1);
 }
 
 
-void HAL_USART1::Transmit(const void *buffer, int size)
+void HAL_USART1::Transmit(const void *_buffer, int size)
 {
-    HAL_UART_Transmit(&h, (const uint8 *)buffer, (uint16)size, 100);
+    HAL_UART_Transmit(&h, (const uint8 *)_buffer, (uint16)size, 100);
 }
 
 
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
 {
+    HAL_UART_Receive_IT(_handle, &HAL_USART1::buffer, 1);
+
+    HAL_UART_Transmit(_handle, &HAL_USART1::buffer, 1, 100);
 }
