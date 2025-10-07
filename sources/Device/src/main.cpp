@@ -36,7 +36,7 @@ int main()
                 i = 0;
             }
             
-            HAL_USART1::Transmit(message, (int)std::strlen(message));
+            HAL_USART1::Transmit(message, (int)std::strlen(message) + 1);
         }
     }
 }
