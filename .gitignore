@@ -1,4 +1,5 @@
 *.uvgui*.*
+*~*
 
 sources/generated/*
 sources/Device/RTE/*
