@@ -48,10 +48,7 @@ void HAL_USART1::Init()
     HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
 
-    if (HAL_UART_Init(&h) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
+    HAL_UART_Init(&h);
 
     HAL_UART_Receive_IT(&h, &buffer, 1);
 }
@@ -81,7 +78,40 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
 }
 
 
-void HAL_UART_ErrorCallback(UART_HandleTypeDef *)
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *_handle)
 {
-//    HAL_USART1::Init();
+    // 1. —охран€ем информацию об ошибке (дл€ диагностики)
+    uint32_t errors = _handle->ErrorCode;
+    
+    // 2. ќстанавливаем UART (это ќЅя«ј“≈Ћ№Ќџ… шаг!)
+    HAL_UART_Abort(_handle);
+    // »Ћ», если используете прием:
+    // HAL_UART_AbortReceive(huart);
+    // HAL_UART_AbortTransmit(huart);
+    
+    // 3. ќчищаем флаги ошибок в регистрах UART
+    __HAL_UART_CLEAR_FLAG(_handle, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_PE | UART_FLAG_FE);
+    
+    // 4. ƒекодируем ошибку дл€ диагностики (опционально, но очень полезно)
+    if(errors & HAL_UART_ERROR_ORE) {
+        // Overrun Error - данные тер€ютс€, слишком высока€ скорость обработки
+        // Ќужно оптимизировать код или использовать DMA
+    }
+    if(errors & HAL_UART_ERROR_NE) {
+        // Noise Error - помехи на линии
+    }
+    if(errors & HAL_UART_ERROR_FE) {
+        // Framing Error - неверный стоп-бит, проблема синхронизации
+    }
+    if(errors & HAL_UART_ERROR_PE) {
+        // Parity Error - ошибка четности
+    }
+    
+    // 5. ѕереинициализируем UART
+    HAL_UART_DeInit(_handle);
+    HAL_UART_Init(_handle);
+    
+    // 6. ѕ≈–≈«јѕ”— ј≈ћ прием данных!
+    // Ёто  –»“»„≈— » важный шаг!
+    HAL_UART_Receive_IT(_handle, &HAL_USART1::buffer, 1);
 }
