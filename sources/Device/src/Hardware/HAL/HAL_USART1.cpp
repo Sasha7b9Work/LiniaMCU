@@ -1,6 +1,7 @@
 // 2025/10/06 11:10:16 (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
+#include <cstring>
 #include <stm32f4xx_hal.h>
 
 
@@ -70,12 +71,17 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
     buffer[pointer++] = (char)HAL_USART1::buffer;
     buffer[pointer + 1] = 0x00;
 
-    if (HAL_USART1::buffer == 0x00)
-    {
-        pointer = pointer;
-    }
-
     HAL_UART_Receive_IT(_handle, &HAL_USART1::buffer, 1);
 
-    HAL_UART_Transmit(_handle, &HAL_USART1::buffer, 1, 100);
+    if (HAL_USART1::buffer == 0x00)
+    {
+        HAL_USART1::Transmit(buffer, (int)std::strlen(buffer) + 1);
+        pointer = 0;
+    }
+}
+
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *)
+{
+//    HAL_USART1::Init();
 }
