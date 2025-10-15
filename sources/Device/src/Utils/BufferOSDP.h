@@ -6,13 +6,16 @@
     Класс единственно предназначен для автоматического выделения/освобождения памяти из кучи
 */
 
-class Buffer
+class BufferOSDP
 {
 public:
-    Buffer(int capacity);
-    ~Buffer();
+    BufferOSDP(int capacity);
+    ~BufferOSDP();
     void Append(uint8);
     bool IsFull() const;
+    bool IsEmpty() const;
+    void RemoveFirst(int);          // Удалить некоторое количество байт из начала буфера
+    const uint8 &operator[](int) const;
 private:
     uint8 *buffer;
     int capacity;      // Столько байт может храниться в буфере

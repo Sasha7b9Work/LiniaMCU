@@ -71,7 +71,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
 }
 
 
-void HAL_USART1::GetData(Buffer &out_buffer)
+void HAL_USART1::GetData(BufferOSDP &out_buffer)
 {
     while (!in_buffer.IsEmpty())
     {

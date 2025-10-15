@@ -1,6 +1,6 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #pragma once
-#include "Utils/Buffer.h"
+#include "Utils/BufferOSDP.h"
 
 
 struct CalibrationSettings;
@@ -50,7 +50,7 @@ namespace HAL_USART1
 {
     void Init();
 
-    void GetData(Buffer &);
+    void GetData(BufferOSDP &);
 
     void Transmit(const void *buffer, int size);
 

@@ -1,23 +1,23 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "Utils/Buffer.h"
+#include "Utils/BufferOSDP.h"
 #include <cstdlib>
 #include <cstring>
 
 
-Buffer::Buffer(int new_capacity) : buffer(nullptr), size(0)
+BufferOSDP::BufferOSDP(int new_capacity) : buffer(nullptr), size(0)
 {
     Allocate(new_capacity);
 }
 
 
-Buffer::~Buffer()
+BufferOSDP::~BufferOSDP()
 {
     Free();
 }
 
 
-void Buffer::Free()
+void BufferOSDP::Free()
 {
     std::free(buffer);
     size = 0;
@@ -25,7 +25,7 @@ void Buffer::Free()
 }
 
 
-void Buffer::Allocate(int new_capacity)
+void BufferOSDP::Allocate(int new_capacity)
 {
     uint8 *temp = nullptr;
 
@@ -49,7 +49,7 @@ void Buffer::Allocate(int new_capacity)
 }
 
 
-void Buffer::Append(uint8 byte)
+void BufferOSDP::Append(uint8 byte)
 {
     if (IsFull())
     {
@@ -60,7 +60,33 @@ void Buffer::Append(uint8 byte)
 }
 
 
-bool Buffer::IsFull() const
+bool BufferOSDP::IsFull() const
 {
     return (size == capacity);
+}
+
+
+bool BufferOSDP::IsEmpty() const
+{
+    return size == 0;
+}
+
+
+const uint8 &BufferOSDP::operator[](int num) const
+{
+    return buffer[num];
+}
+
+
+void BufferOSDP::RemoveFirst(int num_bytes)
+{
+    if (num_bytes >= size)
+    {
+        size = 0;
+    }
+    else
+    {
+        std::memmove(buffer, buffer + num_bytes, (uint)(size - num_bytes));
+        size -= num_bytes;
+    }
 }
