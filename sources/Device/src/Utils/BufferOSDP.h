@@ -18,6 +18,7 @@ public:
     const char &operator[](int) const;
     // Возвращает первую позицию символа
     int FirstPosition(char);
+    char *Data(int pos) const;
 private:
     char *buffer;
     int capacity;      // Столько байт может храниться в буфере

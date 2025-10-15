@@ -75,7 +75,7 @@ void HAL_USART1::GetData(BufferOSDP &out_buffer)
 {
     while (!in_buffer.IsEmpty())
     {
-        out_buffer.Append(in_buffer.Pop());
+        out_buffer.Append((char)in_buffer.Pop());
     }
 }
 

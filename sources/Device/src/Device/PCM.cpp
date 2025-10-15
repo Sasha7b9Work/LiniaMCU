@@ -3,6 +3,7 @@
 #include "Device/PCM.h"
 #include "Utils/BufferOSDP.h"
 #include "Hardware/HAL/HAL.h"
+#include "Utils/String.h"
 
 
 namespace PCM
@@ -37,19 +38,15 @@ void PCM::ProcessInputBuffer()
         return;
     }
 
-    if (pos_begin != 0)
-    {
-        in_buffer.RemoveFirst(pos_begin);
-        pos_begin = 0;
-        pos_end -= pos_begin;
-    }
-
     if (pos_end < 0)
     {
+        in_buffer.RemoveFirst(pos_begin);
         return;
     }
 
-    // Теперь в pos_begin позиция символа ':', а в pos_end - '\0'
+    String message{ in_buffer.Data(pos_begin) };        // Теперь в message принятое сообщение
 
 
+
+    in_buffer.RemoveFirst(pos_end);
 }

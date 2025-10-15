@@ -104,3 +104,9 @@ int BufferOSDP::FirstPosition(char symbol)
 
     return -1;
 }
+
+
+char *BufferOSDP::Data(int pos) const
+{
+    return buffer + pos;
+}
