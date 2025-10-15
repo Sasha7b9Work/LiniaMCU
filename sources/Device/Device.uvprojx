@@ -1268,6 +1268,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\Utils\BufferOSDP.h</FilePath>
             </File>
+            <File>
+              <FileName>StringUtils.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Utils\StringUtils.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>StringUtils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Utils\StringUtils.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -2533,6 +2543,16 @@
               <FileName>BufferOSDP.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Utils\BufferOSDP.h</FilePath>
+            </File>
+            <File>
+              <FileName>StringUtils.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Utils\StringUtils.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>StringUtils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Utils\StringUtils.h</FilePath>
             </File>
           </Files>
         </Group>

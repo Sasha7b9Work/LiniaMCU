@@ -76,6 +76,9 @@ class PinOut : public Pin
 {
 public:
     PinOut(Port::E port, Pin::E pin) : Pin(port, pin, PinMode::Out) { }
+    void ToLow();
+    void ToHi();
+    void Set(bool);
 };
 
 // Orange Pi
@@ -91,7 +94,7 @@ extern PinOut pFPGA_A1_RG;      // PG6  91
 extern PinOut pFPGA_A2_RG;      // PG3  89
 extern PinOut pFPGA_CLK_RG;     // PG7  92
 extern PinOut pFPGA_WR_RG;      // PG8  93
-extern Pin    pFPGA_DAT_RG;     // PD13 82
+extern PinOut pFPGA_DAT_RG;     // PD13 82
 extern Pin    pFPGA_ST_TB;      //      15
 
 // XP10 Источник 50V

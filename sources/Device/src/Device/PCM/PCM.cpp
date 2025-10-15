@@ -4,13 +4,14 @@
 #include "Utils/BufferOSDP.h"
 #include "Hardware/HAL/HAL.h"
 #include "Utils/String.h"
+#include "Device/PCM/ParserPCM.h"
 
 
 namespace PCM
 {
     static BufferOSDP in_buffer(1024);
 
-    static void ProcessInputBuffer();
+    static bool ProcessInputBuffer();
 }
 
 
@@ -23,11 +24,13 @@ void PCM::Update()
 {
     HAL_USART1::GetData(in_buffer);
 
-    ProcessInputBuffer();
+    while (ProcessInputBuffer())
+    {
+    }
 }
 
 
-void PCM::ProcessInputBuffer()
+bool PCM::ProcessInputBuffer()
 {
     int pos_begin = in_buffer.FirstPosition(':');
 
@@ -35,18 +38,18 @@ void PCM::ProcessInputBuffer()
 
     if (pos_begin < 0)
     {
-        return;
+        return false;
     }
 
     if (pos_end < 0)
     {
         in_buffer.RemoveFirst(pos_begin);
-        return;
+        return false;
     }
 
-    String message{ in_buffer.Data(pos_begin) };        // Теперь в message принятое сообщение
-
-
+    ParserPCM::Parse(in_buffer.Data(pos_begin));        // Теперь в message принятое сообщение
 
     in_buffer.RemoveFirst(pos_end);
+
+    return true;
 }

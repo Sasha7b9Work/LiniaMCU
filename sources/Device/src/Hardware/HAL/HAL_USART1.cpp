@@ -3,6 +3,7 @@
 #include "Hardware/HAL/HAL.h"
 #include "Utils/RingBuffer.h"
 #include <cstring>
+#include <cctype>
 #include <stm32f4xx_hal.h>
 
 
@@ -75,7 +76,11 @@ void HAL_USART1::GetData(BufferOSDP &out_buffer)
 {
     while (!in_buffer.IsEmpty())
     {
-        out_buffer.Append((char)in_buffer.Pop());
+        char symbol = (char)in_buffer.Pop();
+
+        symbol = std::toupper(symbol);
+
+        out_buffer.Append(symbol);
     }
 }
 
