@@ -307,7 +307,7 @@ bool ParserPCM::Func_REG(pchar command)
 
         if (pos == command + std::strlen("LENGTH "))
         {
-            Chips::REG::SetLength(num_reg, length);
+            regs[num_reg].SetLength(length);
 
             return true;
         }
@@ -324,7 +324,7 @@ bool ParserPCM::Func_REG(pchar command)
 
         if (pos == command + std::strlen("WRITE "))
         {
-            Chips::REG::Write(num_reg, value);
+            regs[num_reg].Write(value);
 
             return true;
         }

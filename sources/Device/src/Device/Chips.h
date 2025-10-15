@@ -11,13 +11,6 @@ namespace Chips
 
         uint Read(int num);
     }
-
-    namespace REG
-    {
-        void SetLength(int num, uint length);
-
-        void Write(int num, uint value);
-    }
 }
 
 
@@ -51,4 +44,15 @@ private:
 };
 
 
+struct ChipREG : public Chip
+{
+    ChipREG(PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_cs, _clk), out(_out) { }
+
+private:
+
+    PinOut *out;
+};
+
+
 extern ChipDAC dacs[10];
+extern ChipREG regs[10];
