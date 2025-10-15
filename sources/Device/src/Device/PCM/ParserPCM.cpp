@@ -3,6 +3,7 @@
 #include "Device/PCM/ParserPCM.h"
 #include "Utils/StringUtils.h"
 #include "Device/FPGA.h"
+#include "Device/Chips.h"
 #include <cstring>
 #include <cstdlib>
 
@@ -175,5 +176,56 @@ bool ParserPCM::Func_FPGA_REG(pchar command)
 
 bool ParserPCM::Func_ADC(pchar command)
 {
+    if (*command < '0' || *command > '9')
+    {
+        return false;
+    }
+
+    int num_adc = (int)(*command | 0x30);
+
+    command++;
+
+    if (*command != ':')
+    {
+        return false;
+    }
+
+    command++;
+
+    if (SU::BeginWith(command, "LENGTH "))                              // :ADC:REG:LENGTH
+    {
+        command += std::strlen("LENGTH ");
+
+        char *pos = nullptr;
+
+        uint length = std::strtoul(command, &pos, 16);
+
+        if (pos == command + std::strlen("LENGTH "))
+        {
+            Chips::ADC::SetLength(num_adc, length);
+
+            return true;
+        }
+
+        return false;
+    }
+    else if (SU::BeginWith(command, "WRITE "))                          // :ADC:REG:WRITE
+    {
+        command += std::strlen("WRITE ");
+
+        char *pos = nullptr;
+
+        uint value = std::strtoul(command, &pos, 16);
+
+        if (pos == command + std::strlen("WRITE "))
+        {
+            Chips::ADC::Write(num_adc, value);
+
+            return true;
+        }
+
+        return false;
+    }
+
     return false;
 }

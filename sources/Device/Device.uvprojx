@@ -1083,6 +1083,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\Device\Switch.h</FilePath>
             </File>
+            <File>
+              <FileName>Chips.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Chips.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Chips.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Chips.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2358,6 +2368,16 @@
               <FileName>Switch.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Switch.h</FilePath>
+            </File>
+            <File>
+              <FileName>Chips.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Chips.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Chips.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Chips.h</FilePath>
             </File>
           </Files>
         </Group>

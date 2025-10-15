@@ -4,7 +4,10 @@
 
 namespace Chips
 {
-    void SetLength(int num_chip, int length);
+    namespace ADC
+    {
+        void SetLength(int num, uint length);
 
-    void Write(int num_chip, uint value);
+        void Write(int num, uint value);
+    }
 }
