@@ -17,4 +17,6 @@
 namespace Device
 {
     void Init();
+
+    void Update();
 }

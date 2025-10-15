@@ -1243,6 +1243,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\Utils\Log.h</FilePath>
             </File>
+            <File>
+              <FileName>RingBuffer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Utils\RingBuffer.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>RingBuffer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Utils\RingBuffer.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -2483,6 +2493,16 @@
               <FileName>Log.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Utils\Log.h</FilePath>
+            </File>
+            <File>
+              <FileName>RingBuffer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Utils\RingBuffer.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>RingBuffer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Utils\RingBuffer.h</FilePath>
             </File>
           </Files>
         </Group>

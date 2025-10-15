@@ -1,6 +1,7 @@
 // 2025/10/06 11:10:16 (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
+#include "Utils/RingBuffer.h"
 #include <cstring>
 #include <stm32f4xx_hal.h>
 
@@ -24,6 +25,8 @@ namespace HAL_USART1
     void *handle = &h;
 
     static uint8 buffer = 0;
+
+    static RingBuffer in_buffer;
 }
 
 
@@ -62,18 +65,17 @@ void HAL_USART1::Transmit(const void *_buffer, int size)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
 {
-    static char buffer[100];
-    static int pointer = 0;
-
-    buffer[pointer++] = (char)HAL_USART1::buffer;
-    buffer[pointer + 1] = 0x00;
+    HAL_USART1::in_buffer.Append(HAL_USART1::buffer);
 
     HAL_UART_Receive_IT(_handle, &HAL_USART1::buffer, 1);
+}
 
-    if (HAL_USART1::buffer == 0x00)
+
+void HAL_USART1::GetData(Buffer &out_buffer)
+{
+    while (!in_buffer.IsEmpty())
     {
-        HAL_USART1::Transmit(buffer, (int)std::strlen(buffer) + 1);
-        pointer = 0;
+        out_buffer.Append(in_buffer.Pop());
     }
 }
 

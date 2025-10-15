@@ -10,6 +10,7 @@
 #include "Device/Source50V.h"
 #include "Device/Source3kV.h"
 #include "Device/Switch.h"
+#include "Hardware/HAL/HAL.h"
 
 
 void Device::Init()
@@ -25,3 +26,8 @@ void Device::Init()
     Switch::Init();
 }
 
+
+void Device::Update()
+{
+    PCM::Update();
+}

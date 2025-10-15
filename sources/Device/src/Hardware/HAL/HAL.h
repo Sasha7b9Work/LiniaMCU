@@ -1,5 +1,6 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #pragma once
+#include "Utils/Buffer.h"
 
 
 struct CalibrationSettings;
@@ -48,6 +49,8 @@ namespace HAL_TIM3
 namespace HAL_USART1
 {
     void Init();
+
+    void GetData(Buffer &);
 
     void Transmit(const void *buffer, int size);
 

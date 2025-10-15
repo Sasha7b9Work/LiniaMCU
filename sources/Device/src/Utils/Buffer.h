@@ -9,15 +9,14 @@
 class Buffer
 {
 public:
-    Buffer(uint size);
+    Buffer(int capacity);
     ~Buffer();
-    bool ReSize(uint size);
-    uint8 *Data();
-    float *DataFloat();
-    uint   Size() const;
+    void Append(uint8);
+    bool IsFull() const;
 private:
-    void Allocate(uint size);
+    uint8 *buffer;
+    int capacity;      // Столько байт может храниться в буфере
+    int size;           // Столько байт хранится в буфере
+    void Allocate(int new_capacity);
     void Free();
-    void *buffer;
-    uint size;
 };

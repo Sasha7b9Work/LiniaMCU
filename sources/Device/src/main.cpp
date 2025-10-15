@@ -17,10 +17,8 @@ int main()
 
     Device::Init();
 
-    static int counter = 0;
-    
     while (1)
     {
-        counter++;
+        Device::Update();
     }
 }

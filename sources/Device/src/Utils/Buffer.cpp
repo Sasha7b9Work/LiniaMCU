@@ -2,11 +2,12 @@
 #include "defines.h"
 #include "Utils/Buffer.h"
 #include <cstdlib>
+#include <cstring>
 
 
-Buffer::Buffer(uint _size) : buffer(nullptr), size(0)
+Buffer::Buffer(int new_capacity) : buffer(nullptr), size(0)
 {
-    Allocate(_size);
+    Allocate(new_capacity);
 }
 
 
@@ -16,43 +17,50 @@ Buffer::~Buffer()
 }
 
 
-uint8 *Buffer::Data()
-{
-    return (uint8 *)buffer;
-}
-
-
-float *Buffer::DataFloat()
-{
-    return (float *)Data();
-}
-
-
-uint Buffer::Size() const
-{
-    return size;
-}
-
-
-bool Buffer::ReSize(uint _size)
-{
-    Free();
-    Allocate(_size);
-    return (buffer != nullptr);
-}
-
-
 void Buffer::Free()
 {
     std::free(buffer);
-
     size = 0;
+    capacity = 0;
 }
 
 
-void Buffer::Allocate(uint _size)
+void Buffer::Allocate(int new_capacity)
 {
-    buffer = std::malloc(_size);
-    size = buffer ? _size : 0;
+    uint8 *temp = nullptr;
+
+    if (size)
+    {
+        temp = (uint8 *)std::malloc((uint)capacity);
+        std::memcpy(temp, buffer, (uint)capacity);
+    }
+
+    std::free(buffer);
+
+    buffer = (uint8 *)std::malloc((uint)new_capacity);
+    std::memset(buffer, 0, (uint)new_capacity);
+    std::memcpy(buffer, temp, (uint)capacity);
+    capacity = new_capacity;
+
+    if (temp)
+    {
+        std::free(temp);
+    }
 }
 
+
+void Buffer::Append(uint8 byte)
+{
+    if (IsFull())
+    {
+        Allocate(capacity + 1024);
+    }
+
+    buffer[size++] = byte;
+}
+
+
+bool Buffer::IsFull() const
+{
+    return (size == capacity);
+}
