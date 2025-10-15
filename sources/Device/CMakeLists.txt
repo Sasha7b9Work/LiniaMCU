@@ -111,6 +111,7 @@ file(GLOB HARDWARE_USBD  src/Hardware/USBD/*)
 file(GLOB HARDWARE_USBH  src/Hardware/USBH/*)
 file(GLOB SRC            src/*.h src/*.cpp)
 file(GLOB DEVICE         src/Device/*.*)
+file(GLOB DEVICE_PCM     src/Device/PCM/*.*)
 file(GLOB UTILS          src/Utils/*.*)
 
 set_source_files_properties(${LIBS_FATFS} ${LIBS_HAL} ${LIBS_USBD} ${LIBS_USBH} PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -127,6 +128,7 @@ source_group(Hardware/USBD   FILES ${HARDWARE_USBD})
 source_group(Hardware/USBH   FILES ${HARDWARE_USBH})
 source_group(src             FILES ${SRC})
 source_group(Device          FILES ${DEVICE})
+source_group(Device/PCM      FILES ${DEVICE_PCM})
 source_group(Utils           FILES ${UTILS})
 
 add_library(${PROJECT_NAME}
@@ -142,5 +144,6 @@ add_library(${PROJECT_NAME}
     ${HARDWARE_USBH}
     ${SRC}
     ${DEVICE}
+    ${DEVICE_PCM}
     ${UTILS}
 )

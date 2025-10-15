@@ -1034,16 +1034,6 @@
               <FilePath>.\src\Device\MeasCurrent.h</FilePath>
             </File>
             <File>
-              <FileName>PCM.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\PCM.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>PCM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\PCM.h</FilePath>
-            </File>
-            <File>
               <FileName>ScanFormer.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\ScanFormer.cpp</FilePath>
@@ -1092,6 +1082,31 @@
               <FileName>Switch.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Switch.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Device/PCM</GroupName>
+          <Files>
+            <File>
+              <FileName>ParserPCM.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\PCM\ParserPCM.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ParserPCM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\PCM\ParserPCM.h</FilePath>
+            </File>
+            <File>
+              <FileName>PCM.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\PCM\PCM.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>PCM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\PCM\PCM.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2285,16 +2300,6 @@
               <FilePath>.\src\Device\MeasCurrent.h</FilePath>
             </File>
             <File>
-              <FileName>PCM.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\PCM.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>PCM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\PCM.h</FilePath>
-            </File>
-            <File>
               <FileName>ScanFormer.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\ScanFormer.cpp</FilePath>
@@ -2343,6 +2348,31 @@
               <FileName>Switch.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Switch.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Device/PCM</GroupName>
+          <Files>
+            <File>
+              <FileName>ParserPCM.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\PCM\ParserPCM.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ParserPCM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\PCM\ParserPCM.h</FilePath>
+            </File>
+            <File>
+              <FileName>PCM.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\PCM\PCM.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>PCM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\PCM\PCM.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -2,7 +2,7 @@
 #include "defines.h"
 #include "Device/Device.h"
 #include "Device/FPGA.h"
-#include "Device/PCM.h"
+#include "Device/PCM/PCM.h"
 #include "Device/Base.h"
 #include "Device/Substrate.h"
 #include "Device/MeasCurrent.h"
