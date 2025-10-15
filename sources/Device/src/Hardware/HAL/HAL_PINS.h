@@ -68,14 +68,14 @@ protected:
 class PinIn : public Pin
 {
 public:
-    PinIn(Port::E port, Pin::E pin) : Pin(port, pin, PinMode::In) { }
+    PinIn(Port::E _port, Pin::E _pin) : Pin(_port, _pin, PinMode::In) { }
 };
 
 
 class PinOut : public Pin
 {
 public:
-    PinOut(Port::E port, Pin::E pin) : Pin(port, pin, PinMode::Out) { }
+    PinOut(Port::E _port, Pin::E _pin) : Pin(_port, _pin, PinMode::Out) { }
     void ToLow();
     void ToHi();
     void Set(bool);
@@ -112,16 +112,13 @@ extern PinOut pB_ENRGB;         // PC1  27  Разрешение регистра
 // XP5 Канал подложки
 extern PinOut pS_END1P;         // PC0  26  Разрешение DAC
 extern PinOut pS_END2P;         // PF10 22  Разрешение DAC
-extern PinOut pS_ENDRGP;        // PF9  21  Разрешение регистра
+extern PinOut pS_ENRGP;         // PF9  21  Разрешение регистра
 
 //------------------ Измеритель тока, формирователь развёртки, коммутатор, источник напряжения 3кВ
 extern PinOut pDAT2_DAC;        // PB15 76
 extern PinOut pCLK2_DAC;        // PD9  78
-// XP7 Формирователь развёртки
-extern PinOut pRAZV_ENDU;       // PC15 9   Разрешение измерителя U блока развёртки
-extern PinOut pRAZV_ENRGF;      // PF0  10  Разрешение регистра
 // XP13 Источник 3 кВ
-extern PinOut pin_SOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напряжения 3кВ
+extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напряжения 3кВ
 // XP12 Коммутатор
 extern PinIn  pCOMM_3000VE;     // PC4  44
 extern PinIn  pCOMM_200EN;      // PC5  45
@@ -131,4 +128,9 @@ extern PinIn  pCOMM_20EP;       // PB2  48
 extern PinOut pCOMM_ENRGK;      // PF7  19  Разрешение регистра
 // XP6 Измеритель тока
 extern PinOut pMEAS_I_SPEED;    // PG11 126
-extern PinOut pMEAS_I_ENRGI;    //      11  Разрешение регистра
+
+
+//------------------- Канал C----------------------------------
+extern PinOut pMEAS_I_ENRGI;    //      11  Выбор регистра диапазона тока
+extern PinOut pRAZV_ENDU;       // PC15 9   Разрешение измерителя U блока развёртки
+extern PinOut pRAZV_ENRGF;      // PF0  10  Разрешение регистра

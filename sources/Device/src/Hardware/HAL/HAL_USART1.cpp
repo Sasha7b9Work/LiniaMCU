@@ -66,7 +66,7 @@ void HAL_USART1::Transmit(const void *_buffer, int size)
 
 void HAL_USART1::TransmitString(pchar str)
 {
-    Transmit(str, std::strlen(str));
+    Transmit(str, (int)std::strlen(str) + 1);
 }
 
 
@@ -84,7 +84,7 @@ void HAL_USART1::GetData(BufferOSDP &out_buffer)
     {
         char symbol = (char)in_buffer.Pop();
 
-        symbol = std::toupper(symbol);
+        symbol = (char)std::toupper(symbol);
 
         out_buffer.Append(symbol);
     }

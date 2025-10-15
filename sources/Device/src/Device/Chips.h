@@ -12,7 +12,7 @@ struct Chip
         length = _length;
     }
 
-private:
+protected:
 
     PinOut *cs;
     PinOut *clk;
@@ -23,29 +23,19 @@ private:
 
 struct ChipDAC : public Chip
 {
-    ChipDAC(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_l, _cs, _clk), out(_out) { }
+    ChipDAC(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_dat) : Chip(_l, _cs, _clk), dat(_dat) { }
 
-    void Write(uint /*value*/)
-    {
-    }
+    void Write(uint);
 
 private:
 
-    PinOut *out;
+    PinOut *dat;
 };
 
 
-struct ChipREG : public Chip
+struct ChipREG : public ChipDAC
 {
-    ChipREG(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_l, _cs, _clk), out(_out) { }
-
-    void Write(uint /*value*/)
-    {
-    }
-
-private:
-
-    PinOut *out;
+    ChipREG(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_dat) : ChipDAC(_l, _cs, _clk, _dat) { }
 };
 
 
