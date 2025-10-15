@@ -57,7 +57,7 @@ public:
 
     Pin(Port::E, Pin::E, PinMode::E);
 
-private:
+protected:
 
     void      *port;
     uint16     pin;

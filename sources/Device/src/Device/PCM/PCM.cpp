@@ -24,7 +24,7 @@ void PCM::Update()
 {
     HAL_USART1::GetData(in_buffer);
 
-    while (ProcessInputBuffer())
+    while (!in_buffer.IsEmpty() && ProcessInputBuffer())
     {
     }
 }
@@ -47,7 +47,7 @@ bool PCM::ProcessInputBuffer()
         return false;
     }
 
-    ParserPCM::Parse(in_buffer.Data(pos_begin));        // Теперь в message принятое сообщение
+    ParserPCM::Parse(in_buffer.Data(pos_begin));
 
     in_buffer.RemoveFirst(pos_end);
 

@@ -6,6 +6,20 @@
 #include <cstring>
 #include <cstdlib>
 
+/*
+    :FPGA:REG[0...9]:LENGHT [1...32]
+    :FPGA:REG[0...9]:WRITE  [0....(uint)-1]
+
+    :ADC[0...9]:LENGTH [8...32]
+    :ADC[0...9]:WRITE [0...(uint)-1]
+
+    :DAC[0...9]:LENGTH [8...32]
+    :DAC[0...9]:READ
+
+    :REG[0...9]:LENGTH [8...32]
+    :REG[0...9]:WRITE [0...(uint)-1]
+*/
+
 
 namespace ParserPCM
 {
@@ -18,11 +32,29 @@ namespace ParserPCM
 
     //-------------------------------------------------------------------------------------------------------------------------
 
-    static bool FPGA_REG(pchar);
+    static bool Func_FPGA_REG(pchar);
 
     static StructParser fpga[] =
     {
-        { "REG",   FPGA_REG, nullptr },
+        { "REG",   Func_FPGA_REG, nullptr },         // :FPGA:REG...
+        { nullptr, nullptr,       nullptr }
+    };
+
+    //-------------------------------------------------------------------------------------------------------------------------
+
+    static bool Func_ADC(pchar);
+
+    //-------------------------------------------------------------------------------------------------------------------------
+
+    static StructParser dac[] =
+    {
+        { nullptr, nullptr,  nullptr }
+    };
+
+    //-------------------------------------------------------------------------------------------------------------------------
+
+    static StructParser reg[] =
+    {
         { nullptr, nullptr,  nullptr }
     };
 
@@ -30,8 +62,11 @@ namespace ParserPCM
 
     static StructParser head[] =
     {
-        { "FPGA",  nullptr, fpga },
-        { nullptr, nullptr, nullptr }
+        { "FPGA",  nullptr,  fpga },             // :FPGA...
+        { "ADC",   Func_ADC, nullptr },
+        { "DAC",   nullptr,  dac },
+        { "REG",   nullptr,  reg },
+        { nullptr, nullptr,  nullptr }
     };
 
     static bool ProcessStructures(pchar, StructParser *);
@@ -81,7 +116,7 @@ bool ParserPCM::ProcessStructures(pchar command, StructParser *handlers)
 }
 
 
-bool ParserPCM::FPGA_REG(pchar command)
+bool ParserPCM::Func_FPGA_REG(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -99,7 +134,7 @@ bool ParserPCM::FPGA_REG(pchar command)
 
     command++;
 
-    if (SU::BeginWith(command, "LENGTH "))
+    if (SU::BeginWith(command, "LENGTH "))                              // :FPGA:REG:LENGTH
     {
         command += std::strlen("LENGTH ");
 
@@ -116,7 +151,7 @@ bool ParserPCM::FPGA_REG(pchar command)
 
         return false;
     }
-    else if (SU::BeginWith(command, "WRITE "))
+    else if (SU::BeginWith(command, "WRITE "))                          // :FPGA:REG:WRITE
     {
         command += std::strlen("WRITE ");
 
@@ -134,5 +169,11 @@ bool ParserPCM::FPGA_REG(pchar command)
         return false;
     }
 
+    return false;
+}
+
+
+bool ParserPCM::Func_ADC(pchar command)
+{
     return false;
 }

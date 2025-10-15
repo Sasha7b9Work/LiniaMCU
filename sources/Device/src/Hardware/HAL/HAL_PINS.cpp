@@ -38,7 +38,7 @@ PinOut pFPGA_A1_RG(Port::_G, Pin::_6);
 PinOut pFPGA_A2_RG(Port::_G, Pin::_3);
 PinOut pFPGA_CLK_RG(Port::_G, Pin::_7);
 PinOut pFPGA_WR_RG(Port::_G, Pin::_8);
-//Pin    pFPGA_DAT_RG(Port::_D, Pin::_13);
+PinOut pFPGA_DAT_RG(Port::_D, Pin::_13);        // \todo Так ли это?
 //Pin    pFPGA_ST_TB;      //      15
 
 PinOut pPI_ENB_STM(Port::_D, Pin::_12);
@@ -92,4 +92,22 @@ Pin::Pin(Port::E _port, Pin::E _pin, PinMode::E _mode)
     pin = pins[_pin];
 
     mode = _mode;
+}
+
+
+void PinOut::Set(bool value)
+{
+    HAL_GPIO_WritePin((GPIO_TypeDef *)port, pin, value ? GPIO_PIN_SET : GPIO_PIN_RESET);
+}
+
+
+void PinOut::ToLow()
+{
+    Set(false);
+}
+
+
+void PinOut::ToHi()
+{
+    Set(true);
 }
