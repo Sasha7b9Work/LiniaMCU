@@ -3,17 +3,24 @@
 #include "Device/Chips.h"
 
 
-//--- Блок базы 
+ChipDAC dacs[10] =
+{
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr }
+};
 
 
 namespace Chips
 {
     namespace ADC
-    {
-        static uint lengths[10];
-    }
-
-    namespace DAC
     {
         static uint lengths[10];
     }
@@ -23,18 +30,6 @@ namespace Chips
 void Chips::ADC::SetLength(int num_chip, uint length)
 {
     lengths[num_chip] = length;
-}
-
-
-void Chips::DAC::Write(int /*num_chip*/, uint /*value*/)
-{
-
-}
-
-
-void Chips::DAC::SetLength(int num, uint length)
-{
-    lengths[num] = length;
 }
 
 

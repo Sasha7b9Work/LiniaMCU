@@ -250,7 +250,7 @@ bool ParserPCM::Func_DAC(pchar command)
 
         if (pos == command + std::strlen("LENGTH "))
         {
-            Chips::DAC::SetLength(num_dac, length);
+            dacs[num_dac].SetLength(length);
 
             return true;
         }
@@ -267,7 +267,7 @@ bool ParserPCM::Func_DAC(pchar command)
 
         if (pos == command + std::strlen("WRITE "))
         {
-            Chips::DAC::Write(num_dac, value);
+            dacs[num_dac].Write(value);
 
             return true;
         }
