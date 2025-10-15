@@ -11,13 +11,15 @@ class BufferOSDP
 public:
     BufferOSDP(int capacity);
     ~BufferOSDP();
-    void Append(uint8);
+    void Append(char);
     bool IsFull() const;
     bool IsEmpty() const;
     void RemoveFirst(int);          // Удалить некоторое количество байт из начала буфера
-    const uint8 &operator[](int) const;
+    const char &operator[](int) const;
+    // Возвращает первую позицию символа
+    int FirstPosition(char);
 private:
-    uint8 *buffer;
+    char *buffer;
     int capacity;      // Столько байт может храниться в буфере
     int size;           // Столько байт хранится в буфере
     void Allocate(int new_capacity);

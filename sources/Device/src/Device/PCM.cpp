@@ -28,15 +28,28 @@ void PCM::Update()
 
 void PCM::ProcessInputBuffer()
 {
-    while (!in_buffer.IsEmpty() && in_buffer[0] != ':')
-    {
-        in_buffer.RemoveFirst(1);
-    }
+    int pos_begin = in_buffer.FirstPosition(':');
 
-    if (in_buffer.IsEmpty())
+    int pos_end = in_buffer.FirstPosition('\0');
+
+    if (pos_begin < 0)
     {
         return;
     }
+
+    if (pos_begin != 0)
+    {
+        in_buffer.RemoveFirst(pos_begin);
+        pos_begin = 0;
+        pos_end -= pos_begin;
+    }
+
+    if (pos_end < 0)
+    {
+        return;
+    }
+
+    // Теперь в pos_begin позиция символа ':', а в pos_end - '\0'
 
 
 }

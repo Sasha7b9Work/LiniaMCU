@@ -27,17 +27,17 @@ void BufferOSDP::Free()
 
 void BufferOSDP::Allocate(int new_capacity)
 {
-    uint8 *temp = nullptr;
+    char *temp = nullptr;
 
     if (size)
     {
-        temp = (uint8 *)std::malloc((uint)capacity);
+        temp = (char *)std::malloc((uint)capacity);
         std::memcpy(temp, buffer, (uint)capacity);
     }
 
     std::free(buffer);
 
-    buffer = (uint8 *)std::malloc((uint)new_capacity);
+    buffer = (char *)std::malloc((uint)new_capacity);
     std::memset(buffer, 0, (uint)new_capacity);
     std::memcpy(buffer, temp, (uint)capacity);
     capacity = new_capacity;
@@ -49,7 +49,7 @@ void BufferOSDP::Allocate(int new_capacity)
 }
 
 
-void BufferOSDP::Append(uint8 byte)
+void BufferOSDP::Append(char byte)
 {
     if (IsFull())
     {
@@ -72,7 +72,7 @@ bool BufferOSDP::IsEmpty() const
 }
 
 
-const uint8 &BufferOSDP::operator[](int num) const
+const char &BufferOSDP::operator[](int num) const
 {
     return buffer[num];
 }
@@ -89,4 +89,18 @@ void BufferOSDP::RemoveFirst(int num_bytes)
         std::memmove(buffer, buffer + num_bytes, (uint)(size - num_bytes));
         size -= num_bytes;
     }
+}
+
+
+int BufferOSDP::FirstPosition(char symbol)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (buffer[i] == symbol)
+        {
+            return i;
+        }
+    }
+
+    return -1;
 }
