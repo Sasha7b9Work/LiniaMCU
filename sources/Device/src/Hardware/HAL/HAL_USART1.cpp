@@ -64,6 +64,12 @@ void HAL_USART1::Transmit(const void *_buffer, int size)
 }
 
 
+void HAL_USART1::TransmitString(pchar str)
+{
+    Transmit(str, std::strlen(str));
+}
+
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *_handle)
 {
     HAL_USART1::in_buffer.Append(HAL_USART1::buffer);

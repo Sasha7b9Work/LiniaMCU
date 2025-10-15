@@ -54,5 +54,7 @@ namespace HAL_USART1
 
     void Transmit(const void *buffer, int size);
 
+    void TransmitString(pchar);
+
     extern void *handle;       // UART_HandleTypeDef
 }

@@ -273,7 +273,7 @@ bool ParserPCM::Func_DAC(pchar command)
 
         std::sprintf(message, ":DAC%d:READ %u", num_dac, value);
 
-        HAL_USART1::Transmit(message, (int)std::strlen(message));
+        HAL_USART1::TransmitString(message);
 
         return true;
     }
