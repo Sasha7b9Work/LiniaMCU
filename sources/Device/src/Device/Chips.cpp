@@ -18,7 +18,7 @@ ChipDAC dacs[10] =
 };
 
 
-ChipREG regs[10] =
+ChipADC adcs[10] =
 {
     { nullptr, nullptr, nullptr },
     { nullptr, nullptr, nullptr },
@@ -33,22 +33,16 @@ ChipREG regs[10] =
 };
 
 
-namespace Chips
+ChipREG regs[10] =
 {
-    namespace ADC
-    {
-        static uint lengths[10];
-    }
-}
-
-
-void Chips::ADC::SetLength(int num_chip, uint length)
-{
-    lengths[num_chip] = length;
-}
-
-
-uint Chips::ADC::Read(int /*num*/)
-{
-    return 0;
-}
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr },
+    { nullptr, nullptr, nullptr }
+};

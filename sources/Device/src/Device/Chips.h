@@ -3,17 +3,6 @@
 #include "Hardware/HAL/HAL_PINS.h"
 
 
-namespace Chips
-{
-    namespace ADC
-    {
-        void SetLength(int num, uint length);
-
-        uint Read(int num);
-    }
-}
-
-
 struct Chip
 {
     Chip(PinOut *_cs, PinOut *_clk) : cs(_cs), clk(_clk) { }
@@ -60,5 +49,27 @@ private:
 };
 
 
+struct ChipADC : public Chip
+{
+    ChipADC(PinOut *_cs, PinOut *_clk, PinIn *_in) : Chip(_cs, _clk), in(_in)
+    {
+    }
+
+    void Write(uint /*value*/)
+    {
+    }
+
+    uint Read()
+    {
+        return 0;
+    }
+
+private:
+
+    PinIn *in;
+};
+
+
 extern ChipDAC dacs[10];
 extern ChipREG regs[10];
+extern ChipADC adcs[10];

@@ -198,7 +198,7 @@ bool ParserPCM::Func_ADC(pchar command)
 
         if (pos == command + std::strlen("LENGTH "))
         {
-            Chips::ADC::SetLength(num_adc, length);
+            adcs[num_adc].SetLength(length);
 
             return true;
         }
@@ -207,7 +207,7 @@ bool ParserPCM::Func_ADC(pchar command)
     }
     else if (std::strcmp(command, "READ") == 0)                         // :ADC:READ
     {
-        uint value = Chips::ADC::Read(num_adc);
+        uint value = adcs[num_adc].Read();
 
         char message[64];
 
