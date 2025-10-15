@@ -5,7 +5,7 @@
 
 struct Chip
 {
-    Chip(PinOut *_cs, PinOut *_clk) : cs(_cs), clk(_clk) { }
+    Chip(uint _l, PinOut *_cs, PinOut *_clk) : cs(_cs), clk(_clk), length(_l) { }
 
     void SetLength(uint _length)
     {
@@ -23,7 +23,7 @@ private:
 
 struct ChipDAC : public Chip
 {
-    ChipDAC(PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_cs, _clk), out(_out) { }
+    ChipDAC(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_l, _cs, _clk), out(_out) { }
 
     void Write(uint /*value*/)
     {
@@ -37,7 +37,7 @@ private:
 
 struct ChipREG : public Chip
 {
-    ChipREG(PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_cs, _clk), out(_out) { }
+    ChipREG(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_out) : Chip(_l, _cs, _clk), out(_out) { }
 
     void Write(uint /*value*/)
     {
@@ -51,7 +51,7 @@ private:
 
 struct ChipADC : public Chip
 {
-    ChipADC(PinOut *_cs, PinOut *_clk, PinIn *_in) : Chip(_cs, _clk), in(_in)
+    ChipADC(uint _l, PinOut *_cs, PinOut *_clk, PinIn *_in) : Chip(_l, _cs, _clk), in(_in)
     {
     }
 

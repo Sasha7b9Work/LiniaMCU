@@ -5,44 +5,44 @@
 
 ChipDAC dacs[10] =
 {
-    { nullptr, nullptr, nullptr },  // Формирователь развёртки и измеритель напряжения
-    { nullptr, nullptr, nullptr },  // Формирователь развёртки и измеритель напряжения
-    { nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
-    { nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
-    { nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
-    { nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
-    { nullptr, nullptr, nullptr },  // Источник напряжения 50 В
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr }
+    { 12, nullptr, nullptr, nullptr },  // XP7 Формирователь развёртки и измеритель напряжения. Управляется с PCM
+    { 12, nullptr, nullptr, nullptr },  // XP7 Формирователь развёртки и измеритель напряжения
+    { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
+    { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
+    { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
+    { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
+    { 12, nullptr, nullptr, nullptr },  // Источник напряжения 50 В
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr }
 };
 
 
 ChipADC adcs[10] =
 {
-    { nullptr, nullptr, nullptr },  // Формирователь развёртки и измеритель напряжения
-    { nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
-    { nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
-    { nullptr, nullptr, nullptr },  // Измеритель тока
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr },
-    { nullptr, nullptr, nullptr }
+    { 16, nullptr, nullptr, nullptr },  // Формирователь развёртки и измеритель напряжения
+    { 16, nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
+    { 16, nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
+    { 16, nullptr, nullptr, nullptr },  // Измеритель тока
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr },
+    { 0,  nullptr, nullptr, nullptr }
 };
 
 
 ChipREG regs[10] =
 {
-    { &pin_SOURCE_3kV_ENRGV, nullptr, nullptr },  // Источник напряжения 3000В
-    { &pCOMM_ENRGK,          nullptr, nullptr },  // Коммутатор
-    { &pRAZV_ENRGF,          nullptr, nullptr },  // Формирователь развёртки и измеритель напряжения
-    { &pB_END2B,             nullptr, nullptr },  // Источник-измеритель (канал базы)
-    { &pS_ENDRGP,            nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
-    { &pMEAS_I_ENRGI,        nullptr, nullptr },  // Измеритель тока
-    { &pSOURCE_50V_50EN,     nullptr, nullptr },  // Источник напряжения 50 В
-    { nullptr,               nullptr, nullptr },
-    { nullptr,               nullptr, nullptr },
-    { nullptr,               nullptr, nullptr }
+    { 24, &pin_SOURCE_3kV_ENRGV, &pCLK2_DAC, nullptr },  // Источник напряжения 3000В
+    { 16, &pCOMM_ENRGK,          &pCLK2_DAC, nullptr },  // Коммутатор
+    { 32, &pRAZV_ENRGF,          &pCLK2_DAC, nullptr },  // Формирователь развёртки и измеритель напряжения
+    { 32, &pB_END2B,             &pCLK1_DAC, nullptr },  // Источник-измеритель (канал базы)
+    { 32, &pS_ENDRGP,            &pCLK1_DAC, nullptr },  // Источник-измеритель (дополнительный канал)
+    { 16, &pMEAS_I_ENRGI,        &pCLK2_DAC, nullptr },  // Измеритель тока
+    { 8,  &pSOURCE_50V_50EN,     nullptr,    nullptr },  // Источник напряжения 50 В
+    { 0,  nullptr,               nullptr,    nullptr },
+    { 0,  nullptr,               nullptr,    nullptr },
+    { 0,  nullptr,               nullptr,    nullptr }
 };
