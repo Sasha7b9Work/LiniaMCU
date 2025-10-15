@@ -49,27 +49,5 @@ private:
 };
 
 
-struct ChipADC : public Chip
-{
-    ChipADC(uint _l, PinOut *_cs, PinOut *_clk, PinIn *_in) : Chip(_l, _cs, _clk), in(_in)
-    {
-    }
-
-    void Write(uint /*value*/)
-    {
-    }
-
-    uint Read()
-    {
-        return 0;
-    }
-
-private:
-
-    PinIn *in;
-};
-
-
 extern ChipDAC dacs[10];
 extern ChipREG regs[10];
-extern ChipADC adcs[10];

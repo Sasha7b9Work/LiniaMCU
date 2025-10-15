@@ -4,7 +4,7 @@
 
 
 ChipDAC dacs[10] =
-{
+{   //      cs       clk      out
     { 12, nullptr, nullptr, nullptr },  // XP7 Формирователь развёртки и измеритель напряжения. Управляется с PCM
     { 12, nullptr, nullptr, nullptr },  // XP7 Формирователь развёртки и измеритель напряжения
     { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
@@ -12,21 +12,6 @@ ChipDAC dacs[10] =
     { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
     { 12, nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
     { 12, nullptr, nullptr, nullptr },  // Источник напряжения 50 В
-    { 0,  nullptr, nullptr, nullptr },
-    { 0,  nullptr, nullptr, nullptr },
-    { 0,  nullptr, nullptr, nullptr }
-};
-
-
-ChipADC adcs[10] =
-{
-    { 16, nullptr, nullptr, nullptr },  // Формирователь развёртки и измеритель напряжения
-    { 16, nullptr, nullptr, nullptr },  // Источник-измеритель (канал базы)
-    { 16, nullptr, nullptr, nullptr },  // Источник-измеритель (дополнительный канал)
-    { 16, nullptr, nullptr, nullptr },  // Измеритель тока
-    { 0,  nullptr, nullptr, nullptr },
-    { 0,  nullptr, nullptr, nullptr },
-    { 0,  nullptr, nullptr, nullptr },
     { 0,  nullptr, nullptr, nullptr },
     { 0,  nullptr, nullptr, nullptr },
     { 0,  nullptr, nullptr, nullptr }

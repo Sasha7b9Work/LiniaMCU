@@ -16,9 +16,6 @@
     :DAC[0...9]:LENGTH [8...32]
     :DAC[0...9]:WRITE [0...(uint)-1]
 
-    :ADC[0...9]:LENGTH [8...32]
-    :ADC[0...9]:READ
-
     :REG[0...9]:LENGTH [8...32]
     :REG[0...9]:WRITE [0...(uint)-1]
 */
@@ -45,10 +42,6 @@ namespace ParserPCM
 
     //-------------------------------------------------------------------------------------------------------------------------
 
-    static bool Func_ADC(pchar);
-
-    //-------------------------------------------------------------------------------------------------------------------------
-
     static bool Func_DAC(pchar);
 
     //-------------------------------------------------------------------------------------------------------------------------
@@ -60,7 +53,6 @@ namespace ParserPCM
     static StructParser head[] =
     {
         { "FPGA",  nullptr,  fpga },             // :FPGA...
-        { "ADC",   Func_ADC, nullptr },
         { "DAC",   Func_DAC, nullptr },
         { "REG",   Func_REG, nullptr },
         { nullptr, nullptr,  nullptr }
@@ -164,58 +156,6 @@ bool ParserPCM::Func_FPGA_REG(pchar command)
         }
 
         return false;
-    }
-
-    return false;
-}
-
-
-bool ParserPCM::Func_ADC(pchar command)
-{
-    if (*command < '0' || *command > '9')
-    {
-        return false;
-    }
-
-    int num_adc = (int)(*command | 0x30);
-
-    command++;
-
-    if (*command != ':')
-    {
-        return false;
-    }
-
-    command++;
-
-    if (SU::BeginWith(command, "LENGTH "))                              // :ADC:LENGTH
-    {
-        command += std::strlen("LENGTH ");
-
-        char *pos = nullptr;
-
-        uint length = std::strtoul(command, &pos, 16);
-
-        if (pos == command + std::strlen("LENGTH "))
-        {
-            adcs[num_adc].SetLength(length);
-
-            return true;
-        }
-
-        return false;
-    }
-    else if (std::strcmp(command, "READ") == 0)                         // :ADC:READ
-    {
-        uint value = adcs[num_adc].Read();
-
-        char message[64];
-
-        std::sprintf(message, ":ADC%d:READ %u", num_adc, value);
-
-        HAL_USART1::TransmitString(message);
-
-        return true;
     }
 
     return false;
