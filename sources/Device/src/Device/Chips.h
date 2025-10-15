@@ -8,13 +8,20 @@ namespace Chips
     {
         void SetLength(int num, uint length);
 
-        void Write(int num, uint value);
+        uint Read(int num);
     }
 
     namespace DAC
     {
         void SetLength(int num, uint length);
 
-        uint Read(int num);
+        void Write(int num, uint value);
+    }
+
+    namespace REG
+    {
+        void SetLength(int num, uint length);
+
+        void Write(int num, uint value);
     }
 }

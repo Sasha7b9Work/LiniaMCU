@@ -13,11 +13,11 @@
     :FPGA:REG[0...9]:LENGHT [1...32]
     :FPGA:REG[0...9]:WRITE  [0....(uint)-1]
 
-    :ADC[0...9]:LENGTH [8...32]
-    :ADC[0...9]:WRITE [0...(uint)-1]
-
     :DAC[0...9]:LENGTH [8...32]
-    :DAC[0...9]:READ
+    :DAC[0...9]:WRITE [0...(uint)-1]
+
+    :ADC[0...9]:LENGTH [8...32]
+    :ADC[0...9]:READ
 
     :REG[0...9]:LENGTH [8...32]
     :REG[0...9]:WRITE [0...(uint)-1]
@@ -53,10 +53,7 @@ namespace ParserPCM
 
     //-------------------------------------------------------------------------------------------------------------------------
 
-    static StructParser reg[] =
-    {
-        { nullptr, nullptr,  nullptr }
-    };
+    static bool Func_REG(pchar);
 
     //-------------------------------------------------------------------------------------------------------------------------
 
@@ -65,7 +62,7 @@ namespace ParserPCM
         { "FPGA",  nullptr,  fpga },             // :FPGA...
         { "ADC",   Func_ADC, nullptr },
         { "DAC",   Func_DAC, nullptr },
-        { "REG",   nullptr,  reg },
+        { "REG",   Func_REG, nullptr },
         { nullptr, nullptr,  nullptr }
     };
 
@@ -208,22 +205,17 @@ bool ParserPCM::Func_ADC(pchar command)
 
         return false;
     }
-    else if (SU::BeginWith(command, "WRITE "))                          // :ADC:WRITE
+    else if (std::strcmp(command, "READ") == 0)                         // :ADC:READ
     {
-        command += std::strlen("WRITE ");
+        uint value = Chips::ADC::Read(num_adc);
 
-        char *pos = nullptr;
+        char message[64];
 
-        uint value = std::strtoul(command, &pos, 16);
+        std::sprintf(message, ":ADC%d:READ %u", num_adc, value);
 
-        if (pos == command + std::strlen("WRITE "))
-        {
-            Chips::ADC::Write(num_adc, value);
+        HAL_USART1::TransmitString(message);
 
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     return false;
@@ -265,17 +257,79 @@ bool ParserPCM::Func_DAC(pchar command)
 
         return false;
     }
-    else if (std::strcmp(command, "READ") == 0)                         // :DAC:READ
+    else if (SU::BeginWith(command, "WRITE "))                          // :DAC:WRITE
     {
-        uint value = Chips::DAC::Read(num_dac);
+        command += std::strlen("WRITE ");
 
-        char message[64];
+        char *pos = nullptr;
 
-        std::sprintf(message, ":DAC%d:READ %u", num_dac, value);
+        uint value = std::strtoul(command, &pos, 16);
 
-        HAL_USART1::TransmitString(message);
+        if (pos == command + std::strlen("WRITE "))
+        {
+            Chips::DAC::Write(num_dac, value);
 
-        return true;
+            return true;
+        }
+
+        return false;
+    }
+
+    return false;
+}
+
+
+bool ParserPCM::Func_REG(pchar command)
+{
+    if (*command < '0' || *command > '9')
+    {
+        return false;
+    }
+
+    int num_reg = (int)(*command | 0x30);
+
+    command++;
+
+    if (*command != ':')
+    {
+        return false;
+    }
+
+    command++;
+
+    if (SU::BeginWith(command, "LENGTH "))                              // :REG:LENGTH
+    {
+        command += std::strlen("LENGTH ");
+
+        char *pos = nullptr;
+
+        uint length = std::strtoul(command, &pos, 16);
+
+        if (pos == command + std::strlen("LENGTH "))
+        {
+            Chips::REG::SetLength(num_reg, length);
+
+            return true;
+        }
+
+        return false;
+    }
+    else if (SU::BeginWith(command, "WRITE "))                          // :REG:WRITE
+    {
+        command += std::strlen("WRITE ");
+
+        char *pos = nullptr;
+
+        uint value = std::strtoul(command, &pos, 16);
+
+        if (pos == command + std::strlen("WRITE "))
+        {
+            Chips::REG::Write(num_reg, value);
+
+            return true;
+        }
+
+        return false;
     }
 
     return false;
