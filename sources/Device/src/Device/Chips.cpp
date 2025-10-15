@@ -12,6 +12,11 @@ namespace Chips
     {
         static uint lengths[10];
     }
+
+    namespace DAC
+    {
+        static uint lengths[10];
+    }
 }
 
 
@@ -21,7 +26,19 @@ void Chips::ADC::SetLength(int num_chip, uint length)
 }
 
 
-void Chips::ADC::Write(int num_chip, uint value)
+void Chips::ADC::Write(int /*num_chip*/, uint /*value*/)
 {
 
+}
+
+
+void Chips::DAC::SetLength(int num, uint length)
+{
+    lengths[num] = length;
+}
+
+
+uint Chips::DAC::Read(int /*num*/)
+{
+    return 0;
 }

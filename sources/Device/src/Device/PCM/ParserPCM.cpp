@@ -4,8 +4,10 @@
 #include "Utils/StringUtils.h"
 #include "Device/FPGA.h"
 #include "Device/Chips.h"
+#include "Hardware/HAL/HAL.h"
 #include <cstring>
 #include <cstdlib>
+#include <cstdio>
 
 /*
     :FPGA:REG[0...9]:LENGHT [1...32]
@@ -47,10 +49,7 @@ namespace ParserPCM
 
     //-------------------------------------------------------------------------------------------------------------------------
 
-    static StructParser dac[] =
-    {
-        { nullptr, nullptr,  nullptr }
-    };
+    static bool Func_DAC(pchar);
 
     //-------------------------------------------------------------------------------------------------------------------------
 
@@ -65,7 +64,7 @@ namespace ParserPCM
     {
         { "FPGA",  nullptr,  fpga },             // :FPGA...
         { "ADC",   Func_ADC, nullptr },
-        { "DAC",   nullptr,  dac },
+        { "DAC",   Func_DAC, nullptr },
         { "REG",   nullptr,  reg },
         { nullptr, nullptr,  nullptr }
     };
@@ -192,7 +191,7 @@ bool ParserPCM::Func_ADC(pchar command)
 
     command++;
 
-    if (SU::BeginWith(command, "LENGTH "))                              // :ADC:REG:LENGTH
+    if (SU::BeginWith(command, "LENGTH "))                              // :ADC:LENGTH
     {
         command += std::strlen("LENGTH ");
 
@@ -209,7 +208,7 @@ bool ParserPCM::Func_ADC(pchar command)
 
         return false;
     }
-    else if (SU::BeginWith(command, "WRITE "))                          // :ADC:REG:WRITE
+    else if (SU::BeginWith(command, "WRITE "))                          // :ADC:WRITE
     {
         command += std::strlen("WRITE ");
 
@@ -225,6 +224,58 @@ bool ParserPCM::Func_ADC(pchar command)
         }
 
         return false;
+    }
+
+    return false;
+}
+
+
+bool ParserPCM::Func_DAC(pchar command)
+{
+    if (*command < '0' || *command > '9')
+    {
+        return false;
+    }
+
+    int num_dac = (int)(*command | 0x30);
+
+    command++;
+
+    if (*command != ':')
+    {
+        return false;
+    }
+
+    command++;
+
+    if (SU::BeginWith(command, "LENGTH "))                              // :DAC:LENGTH
+    {
+        command += std::strlen("LENGTH ");
+
+        char *pos = nullptr;
+
+        uint length = std::strtoul(command, &pos, 16);
+
+        if (pos == command + std::strlen("LENGTH "))
+        {
+            Chips::DAC::SetLength(num_dac, length);
+
+            return true;
+        }
+
+        return false;
+    }
+    else if (std::strcmp(command, "READ") == 0)                         // :DAC:READ
+    {
+        uint value = Chips::DAC::Read(num_dac);
+
+        char message[64];
+
+        std::sprintf(message, ":DAC%d:READ %u", num_dac, value);
+
+        HAL_USART1::Transmit(message, (int)std::strlen(message));
+
+        return true;
     }
 
     return false;

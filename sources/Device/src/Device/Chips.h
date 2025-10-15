@@ -10,4 +10,11 @@ namespace Chips
 
         void Write(int num, uint value);
     }
+
+    namespace DAC
+    {
+        void SetLength(int num, uint length);
+
+        uint Read(int num);
+    }
 }
