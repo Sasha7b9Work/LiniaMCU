@@ -10,6 +10,8 @@
 #include <cstdio>
 
 /*
+    :PING
+
     :FPGA:REG[0...9]:LENGHT [1...32]
     :FPGA:REG[0...9]:WRITE  [0....(uint)-1]
 
@@ -30,32 +32,26 @@ namespace ParserPCM
         StructParser *structs;
     };
 
-    //-------------------------------------------------------------------------------------------------------------------------
+    static bool Func_Ping(pchar);
 
     static bool Func_FPGA_REG(pchar);
 
     static StructParser fpga[] =
     {
-        { "REG",   Func_FPGA_REG, nullptr },         // :FPGA:REG...
+        { "REG",   Func_FPGA_REG, nullptr },    // :FPGA:REG...
         { nullptr, nullptr,       nullptr }
     };
 
-    //-------------------------------------------------------------------------------------------------------------------------
-
     static bool Func_DAC(pchar);
-
-    //-------------------------------------------------------------------------------------------------------------------------
-
     static bool Func_REG(pchar);
-
-    //-------------------------------------------------------------------------------------------------------------------------
 
     static StructParser head[] =
     {
-        { "FPGA",  nullptr,  fpga },             // :FPGA...
-        { "DAC",   Func_DAC, nullptr },
-        { "REG",   Func_REG, nullptr },
-        { nullptr, nullptr,  nullptr }
+        { "PING",  Func_Ping, nullptr },
+        { "FPGA",  nullptr,   fpga    },        // :FPGA...
+        { "DAC",   Func_DAC,  nullptr },
+        { "REG",   Func_REG,  nullptr },
+        { nullptr, nullptr,   nullptr }
     };
 
     static bool ProcessStructures(pchar, StructParser *);
@@ -65,6 +61,19 @@ namespace ParserPCM
 bool ParserPCM::Parse(pchar command)
 {
     return ProcessStructures(command, head);
+}
+
+
+bool ParserPCM::Func_Ping(pchar command)
+{
+    if (*command != '\0')
+    {
+        return false;
+    }
+
+    HAL_USART1::TransmitString(":PING");
+
+    return true;
 }
 
 
