@@ -20,13 +20,13 @@
 
 ChipDAC dacs[10] =
 {   //      cs           clk         dat
-    { 12, nullptr,     nullptr,    nullptr    },  // Канал C. Управляется с PCM
-    { 12, &pRAZV_ENDU, &pCLK2_DAC, &pDAT2_DAC },  // Канал C. Диапазон
-    { 12, &pB_END1B,   &pCLK1_DAC, &pDAT1_DAC },  // Канал B
-    { 12, &pB_END2B,   &pCLK1_DAC, &pDAT1_DAC },  // Канал B
-    { 12, &pS_END1P,   &pCLK1_DAC, &pDAT1_DAC },  // Канал S
-    { 12, &pS_END2P,   &pCLK1_DAC, &pDAT1_DAC },  // Канал S
-    { 12, nullptr,     nullptr,    nullptr    },  // Источник 50 В. Управляется с PCM
+    { 12, nullptr,     nullptr,    nullptr    },  // 0 Канал C. Управляется с PCM
+    { 12, &pRAZV_ENDU, &pCLK2_DAC, &pDAT2_DAC },  // 1 Канал C. Диапазон
+    { 12, &pB_END1B,   &pCLK1_DAC, &pDAT1_DAC },  // 2 Канал B
+    { 12, &pB_END2B,   &pCLK1_DAC, &pDAT1_DAC },  // 3 Канал B
+    { 12, &pS_END1P,   &pCLK1_DAC, &pDAT1_DAC },  // 4 Канал S
+    { 12, &pS_END2P,   &pCLK1_DAC, &pDAT1_DAC },  // 5 Канал S
+    { 12, nullptr,     nullptr,    nullptr    },  // 6 Источник 50 В. Управляется с PCM
     { 0,  nullptr,     nullptr,    nullptr    },
     { 0,  nullptr,     nullptr,    nullptr    },
     { 0,  nullptr,     nullptr,    nullptr    }
@@ -35,12 +35,12 @@ ChipDAC dacs[10] =
 
 ChipREG regs[10] =
 {
-    { 24, &pSOURCE_3kV_ENRGV, &pCLK2_DAC, &pDAT2_DAC },  // Источник 3кВ
-    { 16, &pCOMM_ENRGK,       &pCLK2_DAC, &pDAT2_DAC },  // Коммутатор
-    { 32, &pRAZV_ENRGF,       &pCLK2_DAC, &pDAT2_DAC },  // Канал C
-    { 32, &pB_ENRGB,          &pCLK1_DAC, &pDAT1_DAC },  // Канал B
-    { 32, &pS_ENRGP,          &pCLK1_DAC, &pDAT1_DAC },  // Канал S
-    { 16, &pMEAS_I_ENRGI,     &pCLK2_DAC, &pDAT2_DAC },  // Измеритель тока
+    { 24, &pSOURCE_3kV_ENRGV, &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
+    { 16, &pCOMM_ENRGK,       &pCLK2_DAC, &pDAT2_DAC },  // 1 Коммутатор
+    { 32, &pRAZV_ENRGF,       &pCLK2_DAC, &pDAT2_DAC },  // 2 Канал C
+    { 32, &pB_ENRGB,          &pCLK1_DAC, &pDAT1_DAC },  // 3 Канал B
+    { 32, &pS_ENRGP,          &pCLK1_DAC, &pDAT1_DAC },  // 4 Канал S
+    { 16, &pMEAS_I_ENRGI,     &pCLK2_DAC, &pDAT2_DAC },  // 5 Измеритель тока
     { 0,  nullptr,            nullptr,    nullptr },
     { 0,  nullptr,            nullptr,    nullptr },
     { 0,  nullptr,            nullptr,    nullptr },
