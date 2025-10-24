@@ -4,7 +4,7 @@
 #include "Utils/BufferOSDP.h"
 #include "Hardware/HAL/HAL.h"
 #include "Utils/String.h"
-#include "Device/PCM/ParserPCM.h"
+#include "Device/PCM/SCPI.h"
 
 
 namespace PCM

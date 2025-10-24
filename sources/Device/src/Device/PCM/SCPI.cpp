@@ -1,10 +1,12 @@
 // 2025/10/15 14:32:26 (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "Device/PCM/ParserPCM.h"
+#include "Device/PCM/SCPI.h"
 #include "Utils/StringUtils.h"
 #include "Device/FPGA.h"
 #include "Device/Chips.h"
 #include "Hardware/HAL/HAL.h"
+#include <cstdarg>
+#include <cstdio>
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
@@ -282,4 +284,16 @@ bool ParserPCM::Func_REG(pchar command)
     }
 
     return false;
+}
+
+
+void ParserPCM::Send(pchar format, ...)
+{
+    char message[1024];
+    std::va_list args;
+    va_start(args, format);
+    std::vsprintf(message, format, args);
+    va_end(args);
+
+    HAL_USART1::TransmitString(message);
 }

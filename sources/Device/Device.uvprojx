@@ -1054,16 +1054,6 @@
           <GroupName>Device/PCM</GroupName>
           <Files>
             <File>
-              <FileName>ParserPCM.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\PCM\ParserPCM.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ParserPCM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\PCM\ParserPCM.h</FilePath>
-            </File>
-            <File>
               <FileName>PCM.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\PCM\PCM.cpp</FilePath>
@@ -1072,6 +1062,16 @@
               <FileName>PCM.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\PCM\PCM.h</FilePath>
+            </File>
+            <File>
+              <FileName>SCPI.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\PCM\SCPI.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SCPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\PCM\SCPI.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2295,16 +2295,6 @@
           <GroupName>Device/PCM</GroupName>
           <Files>
             <File>
-              <FileName>ParserPCM.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\PCM\ParserPCM.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ParserPCM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\PCM\ParserPCM.h</FilePath>
-            </File>
-            <File>
               <FileName>PCM.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\PCM\PCM.cpp</FilePath>
@@ -2313,6 +2303,16 @@
               <FileName>PCM.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\PCM\PCM.h</FilePath>
+            </File>
+            <File>
+              <FileName>SCPI.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\PCM\SCPI.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SCPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\PCM\SCPI.h</FilePath>
             </File>
           </Files>
         </Group>

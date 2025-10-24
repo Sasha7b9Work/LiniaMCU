@@ -6,4 +6,6 @@
 namespace ParserPCM
 {
     bool Parse(pchar);
+
+    void Send(pchar format, ...);
 }
