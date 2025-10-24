@@ -13,12 +13,12 @@ namespace FPGA
         void Write(int num, uint value);
     }
 
-    extern PinIn  pinLIMIT;      // PE7  58
-    extern PinOut pinA0_RG;      // PG5  90
-    extern PinOut pinA1_RG;      // PG6  91
-    extern PinOut pinA2_RG;      // PG3  89
-    extern PinOut pinCLK_RG;     // PG7  92
-    extern PinOut pinWR_RG;      // PG8  93
-    extern PinOut pinDAT_RG;     // PD13 82
-    extern Pin    pinST_TB;      // PF5  15
+    extern PinIn  pinLIMIT;
+    extern PinOut pinA0_RG;
+    extern PinOut pinA1_RG;
+    extern PinOut pinA2_RG;
+    extern PinOut pinCLK_RG;
+    extern PinOut pinWR_RG;
+    extern PinOut pinDAT_RG;
+    extern Pin    pinST_TB;
 }

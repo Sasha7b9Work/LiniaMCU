@@ -1043,6 +1043,11 @@
               <FileType>5</FileType>
               <FilePath>.\src\Device\Commutator.h</FilePath>
             </File>
+            <File>
+              <FileName>Channels.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Channels.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2278,6 +2283,11 @@
               <FileName>Commutator.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Commutator.h</FilePath>
+            </File>
+            <File>
+              <FileName>Channels.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Channels.h</FilePath>
             </File>
           </Files>
         </Group>

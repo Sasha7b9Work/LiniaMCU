@@ -116,8 +116,3 @@ extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напря
 
 // XP6 Измеритель тока
 extern PinOut pMEAS_I_SPEED;    // PG11 126
-
-//------------------- Канал C----------------------------------
-extern PinOut pMEAS_I_ENRGI;    //      11  Выбор регистра диапазона тока
-extern PinOut pRAZV_ENDU;       // PC15 9   Разрешение измерителя U блока развёртки
-extern PinOut pRAZV_ENRGF;      // PF0  10  Разрешение регистра

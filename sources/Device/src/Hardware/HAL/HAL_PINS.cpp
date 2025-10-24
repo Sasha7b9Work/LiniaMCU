@@ -15,10 +15,13 @@ PinOut pS_END2P(Port::_F, Pin::_10);
 PinOut pS_ENRGP(Port::_F, Pin::_9);
 
 PinOut pMEAS_I_SPEED(Port::_G, Pin::_11);
-PinOut pMEAS_I_ENRGI(Port::_F, Pin::_1);
 
-PinOut pRAZV_ENDU(Port::_C, Pin::_15);
-PinOut pRAZV_ENRGF(Port::_F, Pin::_0);
+namespace ChanC
+{
+    PinOut pMEAS_I_ENRGI(Port::_F, Pin::_1);    // 11
+    PinOut pRAZV_ENDU(Port::_C, Pin::_15);      //  9
+    PinOut pRAZV_ENRGF(Port::_F, Pin::_0);      // 10
+}
 
 namespace Source50V
 {
@@ -149,4 +152,8 @@ void HAL_PINS::Init()
     FPGA::pinWR_RG.Init();
     FPGA::pinDAT_RG.Init();
     FPGA::pinST_TB.Init();
+
+    ChanC::pMEAS_I_ENRGI.Init();
+    ChanC::pRAZV_ENDU.Init();
+    ChanC::pRAZV_ENRGF.Init();
 }
