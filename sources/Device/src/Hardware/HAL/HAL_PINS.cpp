@@ -18,9 +18,9 @@ PinOut pMEAS_I_SPEED(Port::_G, Pin::_11);
 
 namespace ChanC
 {
-    PinOut pMEAS_I_ENRGI(Port::_F, Pin::_1);    // 11
-    PinOut pRAZV_ENDU(Port::_C, Pin::_15);      //  9
-    PinOut pRAZV_ENRGF(Port::_F, Pin::_0);      // 10
+    PinOut pinMEAS_I_ENRGI(Port::_F, Pin::_1);    // 11
+    PinOut pinRAZV_ENDU(Port::_C, Pin::_15);      //  9
+    PinOut pinRAZV_ENRGF(Port::_F, Pin::_0);      // 10
 }
 
 namespace Source50V
@@ -153,7 +153,7 @@ void HAL_PINS::Init()
     FPGA::pinDAT_RG.Init();
     FPGA::pinST_TB.Init();
 
-    ChanC::pMEAS_I_ENRGI.Init();
-    ChanC::pRAZV_ENDU.Init();
-    ChanC::pRAZV_ENRGF.Init();
+    ChanC::pinMEAS_I_ENRGI.Init();
+    ChanC::pinRAZV_ENDU.Init();
+    ChanC::pinRAZV_ENRGF.Init();
 }
