@@ -1,7 +1,7 @@
 // 2025/08/30 18:39:38 (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
 #include "Hardware/HAL/HAL_PINS.h"
-#include <stm32f4xx.h>
+#include <stm32f4xx_hal.h>
 
 
 PinOut pB_3_50_V(Port::_G, Pin::_11);
@@ -26,11 +26,15 @@ namespace Source50V
     PinOut pin50EN(Port::_F, Pin::_11);     // 49
 }
 
-PinIn  pCOMM_3000VE(Port::_C, Pin::_4);
-PinIn  pCOMM_200EN(Port::_C, Pin::_5);
-PinIn  pCOMM_200EP(Port::_B, Pin::_0);
-PinIn  pCOMM_20EN(Port::_B, Pin::_1);
-PinIn  pCOMM_20EP(Port::_B, Pin::_2);
+namespace Commutator
+{
+    PinIn  pCOMM_3000VE(Port::_C, Pin::_4); // 44
+    PinIn  pCOMM_200EN(Port::_C, Pin::_5);  // 45
+    PinIn  pCOMM_200EP(Port::_B, Pin::_0);  // 46
+    PinIn  pCOMM_20EN(Port::_B, Pin::_1);   // 47
+    PinIn  pCOMM_20EP(Port::_B, Pin::_2);   // 48
+}
+
 PinOut pCOMM_ENRGK(Port::_F, Pin::_7);
 
 PinOut pSOURCE_3kV_ENRGV(Port::_F, Pin::_8);

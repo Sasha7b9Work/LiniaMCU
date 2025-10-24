@@ -123,12 +123,7 @@ extern PinOut pDAT2_DAC;        // PB15 76
 extern PinOut pCLK2_DAC;        // PD9  78
 // XP13 Источник 3 кВ
 extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напряжения 3кВ
-// XP12 Коммутатор
-extern PinIn  pCOMM_3000VE;     // PC4  44
-extern PinIn  pCOMM_200EN;      // PC5  45
-extern PinIn  pCOMM_200EP;      // PB0  46
-extern PinIn  pCOMM_20EN;       // PB1  47
-extern PinIn  pCOMM_20EP;       // PB2  48
+
 extern PinOut pCOMM_ENRGK;      // PF7  19  Разрешение регистра
 // XP6 Измеритель тока
 extern PinOut pMEAS_I_SPEED;    // PG11 126
