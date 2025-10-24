@@ -128,6 +128,30 @@ void Pin::Init()
 }
 
 
+void PinIn::Init()
+{
+    Pin::Init();
+
+    prev_state = Get();
+}
+
+
+bool PinIn::Get()
+{
+    GPIO_PinState state = HAL_GPIO_ReadPin((GPIO_TypeDef *)port, pin);
+
+    prev_state = (state != GPIO_PIN_RESET);
+
+    return prev_state;
+}
+
+
+bool PinIn::PrevState() const
+{
+    return prev_state;
+}
+
+
 void PinOut::Set(bool value)
 {
     HAL_GPIO_WritePin((GPIO_TypeDef *)port, pin, value ? GPIO_PIN_SET : GPIO_PIN_RESET);

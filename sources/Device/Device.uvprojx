@@ -1024,16 +1024,6 @@
               <FilePath>.\src\Device\Chips.h</FilePath>
             </File>
             <File>
-              <FileName>Source50V.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\Source50V.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Source50V.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\Source50V.h</FilePath>
-            </File>
-            <File>
               <FileName>Commutator.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\Commutator.cpp</FilePath>
@@ -1047,6 +1037,16 @@
               <FileName>Channels.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Channels.h</FilePath>
+            </File>
+            <File>
+              <FileName>Sources.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Sources.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Sources.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Sources.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2265,16 +2265,6 @@
               <FilePath>.\src\Device\Chips.h</FilePath>
             </File>
             <File>
-              <FileName>Source50V.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\Source50V.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Source50V.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\Source50V.h</FilePath>
-            </File>
-            <File>
               <FileName>Commutator.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\Commutator.cpp</FilePath>
@@ -2288,6 +2278,16 @@
               <FileName>Channels.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Channels.h</FilePath>
+            </File>
+            <File>
+              <FileName>Sources.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Sources.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Sources.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Sources.h</FilePath>
             </File>
           </Files>
         </Group>

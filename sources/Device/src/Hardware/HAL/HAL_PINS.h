@@ -57,7 +57,9 @@ public:
 
     Pin(Port::E, Pin::E, PinMode::E);
 
-    void Init();
+    virtual ~Pin() { }
+
+    virtual void Init();
 
 protected:
 
@@ -71,6 +73,18 @@ class PinIn : public Pin
 {
 public:
     PinIn(Port::E _port, Pin::E _pin) : Pin(_port, _pin, PinMode::In) { }
+
+    virtual void Init() override;
+
+    // До вызоыва Get() эта функция вернёт предыдущее состояние входа
+    bool PrevState() const;
+
+    // Эта функция изменяет состояние PrevState()
+    bool Get();
+
+private:
+
+    bool prev_state = false;
 };
 
 
