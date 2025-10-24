@@ -20,6 +20,7 @@ namespace ChanS
     PinOut pinENRGP(Port::_F, Pin::_9);     // 21
 }
 
+
 namespace ChanC
 {
     PinOut pinRAZV_ENDU(Port::_C, Pin::_15);      //  9
@@ -29,11 +30,13 @@ namespace ChanC
     PinOut pinMEAS_I_SPEED(Port::_G, Pin::_11);   // 126
 }
 
+
 namespace Source50V
 {
     PinOut pin50EP(Port::_A, Pin::_6);      // 42
     PinOut pin50EN(Port::_F, Pin::_11);     // 49
 }
+
 
 namespace Commutator
 {
@@ -45,7 +48,12 @@ namespace Commutator
     PinOut pinENRGK(Port::_F, Pin::_7);      // 19
 }
 
-PinOut pSOURCE_3kV_ENRGV(Port::_F, Pin::_8);
+
+namespace Source3kV
+{
+    PinOut pinENRGV(Port::_F, Pin::_8);     // 20
+}
+
 
 namespace FPGA
 {
@@ -142,6 +150,8 @@ void HAL_PINS::Init()
 {
     Source50V::pin50EN.Init();
     Source50V::pin50EP.Init();
+
+    Source3kV::pinENRGV.Init();
 
     Commutator::pin3000VE.Init();
     Commutator::pin200EN.Init();

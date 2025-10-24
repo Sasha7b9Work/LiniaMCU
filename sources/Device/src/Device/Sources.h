@@ -14,3 +14,11 @@ namespace Source50V
     extern PinOut pin50EP;
     extern PinOut pin50EN;
 }
+
+
+// XP13 - Источник 3 кВ
+
+namespace Source3kV
+{
+    extern PinOut pinENRGV; // Разрешение регистра источника напряжения 3кВ
+}

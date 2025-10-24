@@ -102,6 +102,3 @@ extern PinOut pCLK1_DAC;        // PD11 80
 //------------------ Измеритель тока, формирователь развёртки, коммутатор, источник напряжения 3кВ
 extern PinOut pDAT2_DAC;        // PB15 76
 extern PinOut pCLK2_DAC;        // PD9  78
-
-// XP13 Источник 3 кВ
-extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напряжения 3кВ

@@ -3,6 +3,7 @@
 #include "Device/Chips.h"
 #include "Device/Commutator.h"
 #include "Device/Channels.h"
+#include "Device/Sources.h"
 
 
 /*
@@ -37,9 +38,9 @@ ChipDAC dacs[10] =
 
 ChipREG regs[10] =
 {
-    { 24, &pSOURCE_3kV_ENRGV,      &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
+    { 24, &Source3kV::pinENRGV,    &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
     { 16, &Commutator::pinENRGK,   &pCLK2_DAC, &pDAT2_DAC },  // 1 Коммутатор
-    { 32, &ChanC::pinRAZV_ENRGF,   &pCLK2_DAC, &pDAT2_DAC },  // 2 Канал C
+    { 32, &ChanC::pinRAZV_ENRGF,   &pCLK2_DAC, &pDAT2_DAC },  // 2 Формирователь развёртки
     { 32, &ChanB::pinENRGB,        &pCLK1_DAC, &pDAT1_DAC },  // 3 Канал B
     { 32, &ChanS::pinENRGP,        &pCLK1_DAC, &pDAT1_DAC },  // 4 Канал S
     { 16, &ChanC::pinMEAS_I_ENRGI, &pCLK2_DAC, &pDAT2_DAC },  // 5 Измеритель тока

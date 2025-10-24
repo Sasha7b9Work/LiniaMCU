@@ -4,7 +4,7 @@
 #include "Device/FPGA.h"
 #include "Device/PCM/PCM.h"
 #include "Hardware/HAL/HAL.h"
-#include "Device/Source50V.h"
+#include "Device/Sources.h"
 #include "Device/Commutator.h"
 
 
