@@ -11,9 +11,10 @@ namespace Commutator
 
     void Update();
 
-    extern PinIn  pCOMM_3000VE;
-    extern PinIn  pCOMM_200EN;
-    extern PinIn  pCOMM_200EP;
-    extern PinIn  pCOMM_20EN;
-    extern PinIn  pCOMM_20EP;
+    extern PinIn  pin3000VE;
+    extern PinIn  pin200EN;
+    extern PinIn  pin200EP;
+    extern PinIn  pin20EN;
+    extern PinIn  pin20EP;
+    extern PinOut pinENRGK;
 }

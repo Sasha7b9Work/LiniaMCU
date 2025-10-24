@@ -124,7 +124,6 @@ extern PinOut pCLK2_DAC;        // PD9  78
 // XP13 Источник 3 кВ
 extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напряжения 3кВ
 
-extern PinOut pCOMM_ENRGK;      // PF7  19  Разрешение регистра
 // XP6 Измеритель тока
 extern PinOut pMEAS_I_SPEED;    // PG11 126
 

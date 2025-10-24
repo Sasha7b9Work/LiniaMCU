@@ -1,6 +1,7 @@
 // 2025/10/15 16:04:55 (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
 #include "Device/Chips.h"
+#include "Device/Commutator.h"
 
 
 /*
@@ -35,16 +36,16 @@ ChipDAC dacs[10] =
 
 ChipREG regs[10] =
 {
-    { 24, &pSOURCE_3kV_ENRGV, &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
-    { 16, &pCOMM_ENRGK,       &pCLK2_DAC, &pDAT2_DAC },  // 1 Коммутатор
-    { 32, &pRAZV_ENRGF,       &pCLK2_DAC, &pDAT2_DAC },  // 2 Канал C
-    { 32, &pB_ENRGB,          &pCLK1_DAC, &pDAT1_DAC },  // 3 Канал B
-    { 32, &pS_ENRGP,          &pCLK1_DAC, &pDAT1_DAC },  // 4 Канал S
-    { 16, &pMEAS_I_ENRGI,     &pCLK2_DAC, &pDAT2_DAC },  // 5 Измеритель тока
-    { 0,  nullptr,            nullptr,    nullptr },
-    { 0,  nullptr,            nullptr,    nullptr },
-    { 0,  nullptr,            nullptr,    nullptr },
-    { 0,  nullptr,            nullptr,    nullptr }
+    { 24, &pSOURCE_3kV_ENRGV,    &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
+    { 16, &Commutator::pinENRGK, &pCLK2_DAC, &pDAT2_DAC },  // 1 Коммутатор
+    { 32, &pRAZV_ENRGF,          &pCLK2_DAC, &pDAT2_DAC },  // 2 Канал C
+    { 32, &pB_ENRGB,             &pCLK1_DAC, &pDAT1_DAC },  // 3 Канал B
+    { 32, &pS_ENRGP,             &pCLK1_DAC, &pDAT1_DAC },  // 4 Канал S
+    { 16, &pMEAS_I_ENRGI,        &pCLK2_DAC, &pDAT2_DAC },  // 5 Измеритель тока
+    { 0,  nullptr,               nullptr,    nullptr },
+    { 0,  nullptr,               nullptr,    nullptr },
+    { 0,  nullptr,               nullptr,    nullptr },
+    { 0,  nullptr,               nullptr,    nullptr }
 };
 
 

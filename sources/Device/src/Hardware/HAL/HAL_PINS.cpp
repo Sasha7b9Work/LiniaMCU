@@ -28,14 +28,13 @@ namespace Source50V
 
 namespace Commutator
 {
-    PinIn  pCOMM_3000VE(Port::_C, Pin::_4); // 44
-    PinIn  pCOMM_200EN(Port::_C, Pin::_5);  // 45
-    PinIn  pCOMM_200EP(Port::_B, Pin::_0);  // 46
-    PinIn  pCOMM_20EN(Port::_B, Pin::_1);   // 47
-    PinIn  pCOMM_20EP(Port::_B, Pin::_2);   // 48
+    PinIn  pin3000VE(Port::_C, Pin::_4);     // 44
+    PinIn  pin200EN(Port::_C, Pin::_5);      // 45
+    PinIn  pin200EP(Port::_B, Pin::_0);      // 46
+    PinIn  pin20EN(Port::_B, Pin::_1);       // 47
+    PinIn  pin20EP(Port::_B, Pin::_2);       // 48
+    PinOut pinENRGK(Port::_F, Pin::_7);      // 19
 }
-
-PinOut pCOMM_ENRGK(Port::_F, Pin::_7);
 
 PinOut pSOURCE_3kV_ENRGV(Port::_F, Pin::_8);
 
@@ -130,4 +129,11 @@ void HAL_PINS::Init()
 {
     Source50V::pin50EN.Init();
     Source50V::pin50EP.Init();
+
+    Commutator::pin3000VE.Init();
+    Commutator::pin200EN.Init();
+    Commutator::pin200EP.Init();
+    Commutator::pin20EN.Init();
+    Commutator::pin20EP.Init();
+    Commutator::pinENRGK.Init();
 }
