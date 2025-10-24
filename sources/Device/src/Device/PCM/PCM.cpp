@@ -34,22 +34,21 @@ bool PCM::ProcessInputBuffer()
 {
     int pos_begin = in_buffer.FirstPosition(':');
 
-    int pos_end = in_buffer.FirstPosition('\0');
-
-    if (pos_begin < 0)
+    if (pos_begin > 0)
     {
-        return false;
+        in_buffer.RemoveFirst(pos_begin);
     }
+
+    int pos_end = in_buffer.FirstPosition('\0');
 
     if (pos_end < 0)
     {
-        in_buffer.RemoveFirst(pos_begin);
         return false;
     }
 
     SCPI::Parse(in_buffer.Data(pos_begin));
 
-    in_buffer.RemoveFirst(pos_end);
+    in_buffer.RemoveFirst(pos_end + 1);
 
     return true;
 }
