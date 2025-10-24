@@ -13,7 +13,7 @@ namespace Log
 {
     static int counter = 0;
 
-    static void WriteLine(pchar);
+    static void WriteLine(char *);
 }
 
 
@@ -64,7 +64,17 @@ void Log::Error(pchar file, int line, pchar format, ...) //-V2560
 }
 
 
-void Log::WriteLine(pchar line)
+void Log::WriteLine(char *line)
 {
+    // Устанавливаем 7-й бит - приёмное устройство не будет приводить символы к верхнему регистру
+
+    char *pointer = line;
+
+    while (*pointer)
+    {
+        (*pointer) |= 0x80;
+        pointer++;
+    }
+
     SCPI::Send(line);
 }
