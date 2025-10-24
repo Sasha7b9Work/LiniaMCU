@@ -37,5 +37,7 @@ void Commutator::Update()
         {
             SCPI::Send("PININ:%s:STATE %d", pin->name, state ? "1" : "0");
         }
+        
+        pin++;
     }
 }

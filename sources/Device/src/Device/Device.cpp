@@ -30,5 +30,9 @@ void Device::Update()
         meter.Reset();
 
         LOG_WRITE("Test message");
+
+        LOG_WARNING("Test warning");
+
+        LOG_ERROR("Test error");
     }
 }

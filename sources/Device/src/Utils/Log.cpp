@@ -26,9 +26,11 @@ void Log::Write(pchar file, int line, pchar format, ...) //-V2560
     std::vsprintf(message, format, args);
     va_end(args);
 
-    String text_string(":LOG:%3d : %s:%3d : %s", counter++, SU::LeaveTheLastOnes(file, 27), line, message);
+    char full_message[2048];
 
-    WriteLine(text_string.c_str());
+    std::sprintf(full_message, ":LOG:%3d : %s:%3d : %s", counter++, SU::LeaveTheLastOnes(file, 27), line, message);
+
+    WriteLine(full_message);
 }
 
 
