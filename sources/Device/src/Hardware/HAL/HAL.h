@@ -46,6 +46,8 @@ namespace HAL_TIM3
     void StopIT();
 };
 
+
+// Взаимодействие с Orange Pi
 namespace HAL_USART1
 {
     void Init();

@@ -3,6 +3,11 @@
 #include "Hardware/HAL/HAL_PINS.h"
 
 
+/*
+*   Здесь всё, что относится к управлению регистрами и ЦАП-ми всех блоков
+*/
+
+
 struct Chip
 {
     Chip(uint _l, PinOut *_cs, PinOut *_clk) : cs(_cs), clk(_clk), length(_l) { }

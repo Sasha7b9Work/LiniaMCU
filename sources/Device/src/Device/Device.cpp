@@ -4,10 +4,14 @@
 #include "Device/FPGA.h"
 #include "Device/PCM/PCM.h"
 #include "Hardware/HAL/HAL.h"
+#include "Device/Source50V.h"
+#include "Device/Commutator.h"
 
 
 void Device::Init()
 {
+    Commutator::Init();
+    Source50V::Init();
     FPGA::Init();
     PCM::Init();
 }
@@ -15,5 +19,7 @@ void Device::Init()
 
 void Device::Update()
 {
+    Commutator::Update();
+    Source50V::Update();
     PCM::Update();
 }

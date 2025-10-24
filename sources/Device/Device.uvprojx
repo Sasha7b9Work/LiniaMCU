@@ -11,7 +11,7 @@
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pArmCC>6210000::V6.21::.\ARMCLANG539</pArmCC>
-      <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
+      <pCCUsed>6210000::V6.21::.\ARMCLANG539</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -1022,6 +1022,26 @@
               <FileName>Chips.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Chips.h</FilePath>
+            </File>
+            <File>
+              <FileName>Source50V.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Source50V.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Source50V.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Source50V.h</FilePath>
+            </File>
+            <File>
+              <FileName>Commutator.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Commutator.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Commutator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Commutator.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2238,6 +2258,26 @@
               <FileName>Chips.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Chips.h</FilePath>
+            </File>
+            <File>
+              <FileName>Source50V.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Source50V.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Source50V.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Source50V.h</FilePath>
+            </File>
+            <File>
+              <FileName>Commutator.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Commutator.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Commutator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Commutator.h</FilePath>
             </File>
           </Files>
         </Group>
