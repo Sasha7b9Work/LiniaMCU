@@ -90,7 +90,7 @@ namespace HAL_PINS
 }
 
 
-// Orange Pi
+//------------------ Orange Pi
 extern PinOut pPI_ENB_STM;      // PD12 81
 extern Pin    pPI_TX;           // PB6  136
 extern Pin    pPI_RX;           // PA10 102
