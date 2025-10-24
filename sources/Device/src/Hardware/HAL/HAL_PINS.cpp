@@ -20,8 +20,11 @@ PinOut pMEAS_I_ENRGI(Port::_F, Pin::_1);
 PinOut pRAZV_ENDU(Port::_C, Pin::_15);
 PinOut pRAZV_ENRGF(Port::_F, Pin::_0);
 
-PinOut pSOURCE_50V_50EP(Port::_A, Pin::_6);
-PinOut pSOURCE_50V_50EN(Port::_F, Pin::_11);
+namespace Source50V
+{
+    PinOut pin50EP(Port::_A, Pin::_6);      // 42
+    PinOut pin50EN(Port::_F, Pin::_11);     // 49
+}
 
 PinIn  pCOMM_3000VE(Port::_C, Pin::_4);
 PinIn  pCOMM_200EN(Port::_C, Pin::_5);
@@ -95,6 +98,12 @@ Pin::Pin(Port::E _port, Pin::E _pin, PinMode::E _mode)
 }
 
 
+void Pin::Init()
+{
+
+}
+
+
 void PinOut::Set(bool value)
 {
     HAL_GPIO_WritePin((GPIO_TypeDef *)port, pin, value ? GPIO_PIN_SET : GPIO_PIN_RESET);
@@ -110,4 +119,11 @@ void PinOut::ToLow()
 void PinOut::ToHi()
 {
     Set(true);
+}
+
+
+void HAL_PINS::Init()
+{
+    Source50V::pin50EN.Init();
+    Source50V::pin50EP.Init();
 }

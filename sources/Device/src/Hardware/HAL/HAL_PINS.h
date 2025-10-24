@@ -57,6 +57,8 @@ public:
 
     Pin(Port::E, Pin::E, PinMode::E);
 
+    void Init();
+
 protected:
 
     void      *port;
@@ -81,11 +83,17 @@ public:
     void Set(bool);
 };
 
+
+namespace HAL_PINS
+{
+    void Init();
+}
+
+
 // Orange Pi
 extern PinOut pPI_ENB_STM;      // PD12 81
 extern Pin    pPI_TX;           // PB6  136
 extern Pin    pPI_RX;           // PA10 102
-
 
 // ПЛИС
 extern PinIn  pFPGA_LIMIT;      // PE7  58
@@ -96,10 +104,6 @@ extern PinOut pFPGA_CLK_RG;     // PG7  92
 extern PinOut pFPGA_WR_RG;      // PG8  93
 extern PinOut pFPGA_DAT_RG;     // PD13 82
 extern Pin    pFPGA_ST_TB;      //      15
-
-// XP10 Источник 50V
-extern PinOut pSOURCE_50V_50EP; // PA6  42
-extern PinOut pSOURCE_50V_50EN; // PF11 49
 
 //------------------ Канал базы, канал подложки
 extern PinOut pDAT1_DAC;        // PD8  77

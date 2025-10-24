@@ -2,6 +2,8 @@
 #pragma once
 
 
+// XP12 - Коммутатор
+
 namespace Commutator
 {
     void Init();

@@ -2,6 +2,7 @@
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
 #include "Utils/Log.h"
+#include "Hardware/HAL/HAL_PINS.h"
 #include <stm32f4xx_hal.h>
 
 
@@ -20,6 +21,8 @@ void HAL::Init()
     EnablePeriphery();
 
     HAL_Init();
+
+    HAL_PINS::Init();
 
     HAL_USART1::Init();
 }
