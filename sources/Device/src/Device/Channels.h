@@ -12,10 +12,12 @@ namespace ChanB
 }
 
 
-// Канал подложки
-namespace ChanP
+// XP5 - Канал подложки
+namespace ChanS
 {
-
+    extern PinOut pinEND1P;         // Разрешение DAC
+    extern PinOut pinEND2P;         // Разрешение DAC
+    extern PinOut pinENRGP;         // Разрешение регистра
 }
 
 

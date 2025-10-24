@@ -103,10 +103,7 @@ extern PinOut pB_3_50_V;        // PG11 57  Определяет режим высокого напряжения
 extern PinOut pB_END1B;         // PC3  29  Разрешение DAC
 extern PinOut pB_END2B;         // PC2  28  Разрешение DAC
 extern PinOut pB_ENRGB;         // PC1  27  Разрешение регистра
-// XP5 Канал подложки
-extern PinOut pS_END1P;         // PC0  26  Разрешение DAC
-extern PinOut pS_END2P;         // PF10 22  Разрешение DAC
-extern PinOut pS_ENRGP;         // PF9  21  Разрешение регистра
+
 
 //------------------ Измеритель тока, формирователь развёртки, коммутатор, источник напряжения 3кВ
 extern PinOut pDAT2_DAC;        // PB15 76

@@ -10,9 +10,12 @@ PinOut pB_END2B(Port::_C, Pin::_2);
 PinOut pB_ENRGB(Port::_C, Pin::_1);
 
 
-PinOut pS_END1P(Port::_C, Pin::_0);
-PinOut pS_END2P(Port::_F, Pin::_10);
-PinOut pS_ENRGP(Port::_F, Pin::_9);
+namespace ChanS
+{
+    PinOut pinEND1P(Port::_C, Pin::_0);     // 26
+    PinOut pinEND2P(Port::_F, Pin::_10);    // 22
+    PinOut pinENRGP(Port::_F, Pin::_9);     // 21
+}
 
 namespace ChanC
 {
@@ -152,6 +155,10 @@ void HAL_PINS::Init()
     FPGA::pinWR_RG.Init();
     FPGA::pinDAT_RG.Init();
     FPGA::pinST_TB.Init();
+
+    ChanS::pinEND1P.Init();
+    ChanS::pinEND2P.Init();
+    ChanS::pinENRGP.Init();
 
     ChanC::pinRAZV_ENDU.Init();
     ChanC::pinRAZV_ENRGF.Init();
