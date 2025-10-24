@@ -1,6 +1,5 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "Log.h"
 #include "String.h"
 #include <cstring>
 #include <cstdio>

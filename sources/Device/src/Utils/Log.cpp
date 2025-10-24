@@ -1,32 +1,68 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "Log.h"
+#include "Utils/Log.h"
+#include "Utils/String.h"
+#include "Utils/StringUtils.h"
+#include "Device/PCM/SCPI.h"
 #include <cstdarg>
 #include <cstdio>
 #include <cstring>
 
 
-void Log::AddString(pchar format, ...) //-V2560
+namespace Log
 {
-    char string[100];
+    static int counter = 0;
 
-    std::va_list args;
-    va_start(args, format);
-    std::vsprintf(string, format, args);
-    va_end(args);
+    static void WriteLine(pchar);
 }
 
 
-void Log::Trace(char *file, int line, char *format, ...) //-V2560
+void Log::Write(pchar file, int line, pchar format, ...) //-V2560
 {
-    char message[200];
-    std::sprintf(message, "%s:%d ", file, line);
+    char message[1024];
 
-    char text[100];
     std::va_list args;
     va_start(args, format);
-    std::vsprintf(text, format, args);
+    std::vsprintf(message, format, args);
     va_end(args);
 
-    std::strcat(message, text);
+    String text_string(":LOG:%3d : %s:%3d : %s", counter++, SU::LeaveTheLastOnes(file, 27), line, message);
+
+    WriteLine(text_string.c_str());
+}
+
+
+void Log::Warning(pchar file, int line, pchar format, ...) //-V2560
+{
+    char message[1024];
+
+    std::va_list args;
+    va_start(args, format);
+    std::vsprintf(message, format, args);
+    va_end(args);
+
+    String text_string(":WARNING:%3d : %s:%3d : %s", counter++, SU::LeaveTheLastOnes(file, 27), line, message);
+
+    WriteLine(text_string.c_str());
+}
+
+
+void Log::Error(pchar file, int line, pchar format, ...) //-V2560
+{
+    char message[1024];
+
+    std::va_list args;
+    va_start(args, format);
+    std::vsprintf(message, format, args);
+    va_end(args);
+
+    String text_string(":ERROR:%3d : %s:%3d : %s", counter++, SU::LeaveTheLastOnes(file, 27), line, message);
+
+    WriteLine(text_string.c_str());
+}
+
+
+void Log::WriteLine(pchar line)
+{
+    SCPI::Send(line);
 }

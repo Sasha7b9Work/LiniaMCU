@@ -78,17 +78,11 @@ inline void EmptyFuncVV() {};
 
 
 #ifdef WIN32
-
-#define __attribute__(x)
-
+    #define __attribute__(x)
 #else
-
-#ifndef NULL
-    #define NULL 0
-#endif
-
-//#define nullptr NULL   //-V1059
-
+    #ifndef NULL
+        #define NULL 0
+    #endif
 #endif
 
 
@@ -97,3 +91,5 @@ inline void EmptyFuncVV() {};
 #define ERROR_VALUE_FLOAT   1.111e29f
 #define ERROR_VALUE_UINT8   255
 #define ERROR_STRING_VALUE  "--.--"
+
+#include "Utils/Log.h"

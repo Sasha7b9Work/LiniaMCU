@@ -6,6 +6,7 @@
 #include "Hardware/HAL/HAL.h"
 #include "Device/Sources.h"
 #include "Device/Commutator.h"
+#include "Hardware/Timer.h"
 
 
 void Device::Init()
@@ -21,4 +22,13 @@ void Device::Update()
 {
     Commutator::Update();
     PCM::Update();
+
+    static TimeMeterMS meter;
+
+    if (meter.ElapsedTime() > 1000)
+    {
+        meter.Reset();
+
+        LOG_WRITE("Test message");
+    }
 }

@@ -15,3 +15,31 @@ bool SU::BeginWith(pchar str, pchar begin)
 
     return std::memcmp((void *)str, begin, length_begin) == 0;
 }
+
+
+pchar SU::LeaveTheLastOnes(pchar in, int number)
+{
+    int size = (int)std::strlen(in);
+
+    if (size >= number)
+    {
+        return in + size - number;
+    }
+
+    static char buffer[1024];
+
+    char *pointer = buffer;
+
+    int num_spaces = number - size;
+
+    for (int i = 0; i < num_spaces; i++)
+    {
+        *pointer++ = ' ';
+    }
+
+    *pointer = '\0';
+
+    std::strcat(buffer, in);
+
+    return buffer;
+}
