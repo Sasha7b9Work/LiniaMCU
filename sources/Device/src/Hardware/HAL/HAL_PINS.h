@@ -98,18 +98,10 @@ extern Pin    pPI_RX;           // PA10 102
 //------------------ Канал базы, канал подложки
 extern PinOut pDAT1_DAC;        // PD8  77
 extern PinOut pCLK1_DAC;        // PD11 80
-// XP4 Канал базы
-extern PinOut pB_3_50_V;        // PG11 57  Определяет режим высокого напряжения/режим большого тока
-extern PinOut pB_END1B;         // PC3  29  Разрешение DAC
-extern PinOut pB_END2B;         // PC2  28  Разрешение DAC
-extern PinOut pB_ENRGB;         // PC1  27  Разрешение регистра
-
 
 //------------------ Измеритель тока, формирователь развёртки, коммутатор, источник напряжения 3кВ
 extern PinOut pDAT2_DAC;        // PB15 76
 extern PinOut pCLK2_DAC;        // PD9  78
+
 // XP13 Источник 3 кВ
 extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напряжения 3кВ
-
-// XP6 Измеритель тока
-
