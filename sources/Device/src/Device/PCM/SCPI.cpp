@@ -123,7 +123,7 @@ bool SCPI::Func_FPGA_REG(pchar command)
         return false;
     }
 
-    int num_reg = (int)((*command) | 0x30);
+    int num_reg = (int)((*command) & 0x0F);
 
     command++;
 
@@ -237,7 +237,7 @@ bool SCPI::Func_REG(pchar command)
         return false;
     }
 
-    int num_reg = (int)(*command | 0x30);
+    int num_reg = (int)((*command) & 0x0F);
 
     command++;
 
