@@ -20,6 +20,5 @@ void Device::Init()
 void Device::Update()
 {
     Commutator::Update();
-    Source50V::Update();
     PCM::Update();
 }

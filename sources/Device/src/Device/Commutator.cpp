@@ -6,12 +6,6 @@
 
 namespace Commutator
 {
-    struct StructPinIn
-    {
-        PinIn *pin;
-        pchar name;
-    };
-
     static StructPinIn pins[] =
     {
         { &pin3000VE, "3000V" },

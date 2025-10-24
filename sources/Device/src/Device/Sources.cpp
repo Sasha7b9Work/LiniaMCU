@@ -7,9 +7,3 @@ void Source50V::Init()
 {
 
 }
-
-
-void Source50V::Update()
-{
-
-}

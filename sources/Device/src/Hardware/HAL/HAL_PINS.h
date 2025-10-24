@@ -98,6 +98,14 @@ public:
 };
 
 
+// ƒополнительна€ структура дл€ вс€ких надобностей
+struct StructPinIn
+{
+    PinIn *pin;
+    pchar name;
+};
+
+
 namespace HAL_PINS
 {
     void Init();
