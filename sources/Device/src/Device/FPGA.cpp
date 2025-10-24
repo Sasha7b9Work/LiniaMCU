@@ -19,12 +19,16 @@ void FPGA::Init()
 
 void FPGA::Reg::SetLength(int num, uint length)
 {
+    LOG_WRITE("%s %d %u", __FUNCTION__, num, length);
+
     lengths[num] = length;
 }
 
 
 void FPGA::Reg::Write(int num, uint value)
 {
+    LOG_WRITE("%s %d %u", __FUNCTION__, num, value);
+
     pinA0_RG.Set(_GET_BIT(num, 0) != 0);
     pinA1_RG.Set(_GET_BIT(num, 1) != 0);
     pinA2_RG.Set(_GET_BIT(num, 2) != 0);

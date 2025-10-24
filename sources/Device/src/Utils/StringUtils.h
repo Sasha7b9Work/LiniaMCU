@@ -9,4 +9,7 @@ namespace SU
 
     // Оставить number последних символов от in. Если строка меньше, то в начале добавить пробелы
     pchar LeaveTheLastOnes(pchar in, int number);
+
+    // Если символ равен одному из mask
+    bool CharIs(char, pchar mask);
 }

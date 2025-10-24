@@ -12,27 +12,18 @@
 void Device::Init()
 {
     Commutator::Init();
+
     Source50V::Init();
+
     FPGA::Init();
+
     PCM::Init();
 }
 
-
+    
 void Device::Update()
 {
     Commutator::Update();
+
     PCM::Update();
-
-    static TimeMeterMS meter;
-
-    if (meter.ElapsedTime() > 1000)
-    {
-        meter.Reset();
-
-        LOG_WRITE("Test message");
-
-        LOG_WARNING("Test warning");
-
-        LOG_ERROR("Test error");
-    }
 }

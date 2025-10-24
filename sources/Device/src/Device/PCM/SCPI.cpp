@@ -73,7 +73,7 @@ bool SCPI::Func_Ping(pchar command)
         return false;
     }
 
-    HAL_USART1::TransmitString(":PING");
+    SCPI::Send(":PING");
 
     return true;
 }
@@ -142,7 +142,7 @@ bool SCPI::Func_FPGA_REG(pchar command)
 
         uint length = std::strtoul(command, &pos, 16);
 
-        if (pos == command + std::strlen("LENGTH "))
+        if (SU::CharIs(*pos, "\0 :"))
         {
             FPGA::Reg::SetLength(num_reg, length);
 
@@ -159,7 +159,7 @@ bool SCPI::Func_FPGA_REG(pchar command)
 
         uint value = std::strtoul(command, &pos, 16);
 
-        if (pos == command + std::strlen("WRITE "))
+        if (SU::CharIs(*pos, "\0 :"))
         {
             FPGA::Reg::Write(num_reg, value);
 
@@ -180,7 +180,7 @@ bool SCPI::Func_DAC(pchar command)
         return false;
     }
 
-    int num_dac = (int)(*command | 0x30);
+    int num_dac = (int)((*command) & 0x0F);
 
     command++;
 
@@ -199,8 +199,10 @@ bool SCPI::Func_DAC(pchar command)
 
         uint length = std::strtoul(command, &pos, 16);
 
-        if (pos == command + std::strlen("LENGTH "))
+        if(SU::CharIs(*pos, "\0 :"))
         {
+            LOG_WRITE("DAC%d LENGTH %u", num_dac, length);
+
             dacs[num_dac].SetLength(length);
 
             return true;
@@ -216,8 +218,10 @@ bool SCPI::Func_DAC(pchar command)
 
         uint value = std::strtoul(command, &pos, 16);
 
-        if (pos == command + std::strlen("WRITE "))
+        if (SU::CharIs(*pos, "\0 :"))
         {
+            LOG_WRITE("DAC%d WRITE %u", num_dac, value);
+
             dacs[num_dac].Write(value);
 
             return true;
@@ -256,8 +260,10 @@ bool SCPI::Func_REG(pchar command)
 
         uint length = std::strtoul(command, &pos, 16);
 
-        if (pos == command + std::strlen("LENGTH "))
+        if (SU::CharIs(*pos, "\0 :"))
         {
+            LOG_WRITE("REG%d LENGTH %u", num_reg, length);
+
             regs[num_reg].SetLength(length);
 
             return true;
@@ -273,8 +279,10 @@ bool SCPI::Func_REG(pchar command)
 
         uint value = std::strtoul(command, &pos, 16);
 
-        if (pos == command + std::strlen("WRITE "))
+        if (SU::CharIs(*pos, "\0 :"))
         {
+            LOG_WRITE("REG%d WRITE %u", num_reg, value);
+
             regs[num_reg].Write(value);
 
             return true;

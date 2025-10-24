@@ -43,3 +43,17 @@ pchar SU::LeaveTheLastOnes(pchar in, int number)
 
     return buffer;
 }
+
+
+bool SU::CharIs(char symbol, pchar mask)
+{
+    for (uint i = 0; i < std::strlen(mask); i++)
+    {
+        if (symbol == mask[i])
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
