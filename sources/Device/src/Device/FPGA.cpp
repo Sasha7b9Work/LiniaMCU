@@ -12,8 +12,8 @@ namespace FPGA
 
 void FPGA::Init()
 {
-    pFPGA_CLK_RG.ToLow();
-    pFPGA_WR_RG.ToLow();
+    pinCLK_RG.ToLow();
+    pinWR_RG.ToLow();
 }
 
 
@@ -25,19 +25,19 @@ void FPGA::Reg::SetLength(int num, uint length)
 
 void FPGA::Reg::Write(int num, uint value)
 {
-    pFPGA_A0_RG.Set(_GET_BIT(num, 0) != 0);
-    pFPGA_A1_RG.Set(_GET_BIT(num, 1) != 0);
-    pFPGA_A2_RG.Set(_GET_BIT(num, 2) != 0);
+    pinA0_RG.Set(_GET_BIT(num, 0) != 0);
+    pinA1_RG.Set(_GET_BIT(num, 1) != 0);
+    pinA2_RG.Set(_GET_BIT(num, 2) != 0);
 
     int length = (int)lengths[num];
 
     for (int bit = length - 1; bit >= 0; bit--)
     {
-        pFPGA_DAT_RG.Set(_GET_BIT(value, bit) != 0);
-        pFPGA_CLK_RG.ToHi();
-        pFPGA_CLK_RG.ToLow();
+        pinDAT_RG.Set(_GET_BIT(value, bit) != 0);
+        pinCLK_RG.ToHi();
+        pinCLK_RG.ToLow();
     }
 
-    pFPGA_WR_RG.ToHi();
-    pFPGA_WR_RG.ToLow();
+    pinWR_RG.ToHi();
+    pinWR_RG.ToLow();
 }

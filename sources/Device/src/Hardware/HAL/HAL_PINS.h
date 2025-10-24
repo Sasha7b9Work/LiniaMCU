@@ -95,16 +95,6 @@ extern PinOut pPI_ENB_STM;      // PD12 81
 extern Pin    pPI_TX;           // PB6  136
 extern Pin    pPI_RX;           // PA10 102
 
-// ПЛИС
-extern PinIn  pFPGA_LIMIT;      // PE7  58
-extern PinOut pFPGA_A0_RG;      // PG5  90
-extern PinOut pFPGA_A1_RG;      // PG6  91
-extern PinOut pFPGA_A2_RG;      // PG3  89
-extern PinOut pFPGA_CLK_RG;     // PG7  92
-extern PinOut pFPGA_WR_RG;      // PG8  93
-extern PinOut pFPGA_DAT_RG;     // PD13 82
-extern Pin    pFPGA_ST_TB;      //      15
-
 //------------------ Канал базы, канал подложки
 extern PinOut pDAT1_DAC;        // PD8  77
 extern PinOut pCLK1_DAC;        // PD11 80
@@ -126,7 +116,6 @@ extern PinOut pSOURCE_3kV_ENRGV; // PF8  20  Разрешение регистра источника напря
 
 // XP6 Измеритель тока
 extern PinOut pMEAS_I_SPEED;    // PG11 126
-
 
 //------------------- Канал C----------------------------------
 extern PinOut pMEAS_I_ENRGI;    //      11  Выбор регистра диапазона тока

@@ -38,14 +38,18 @@ namespace Commutator
 
 PinOut pSOURCE_3kV_ENRGV(Port::_F, Pin::_8);
 
-PinIn  pFPGA_LIMIT(Port::_E, Pin::_7);
-PinOut pFPGA_A0_RG(Port::_G, Pin::_5);
-PinOut pFPGA_A1_RG(Port::_G, Pin::_6);
-PinOut pFPGA_A2_RG(Port::_G, Pin::_3);
-PinOut pFPGA_CLK_RG(Port::_G, Pin::_7);
-PinOut pFPGA_WR_RG(Port::_G, Pin::_8);
-PinOut pFPGA_DAT_RG(Port::_D, Pin::_13);        // \todo Так ли это?
-//Pin    pFPGA_ST_TB;      //      15
+namespace FPGA
+{
+    PinIn  pinLIMIT(Port::_E, Pin::_7);               // 58
+    PinOut pinA0_RG(Port::_G, Pin::_5);               // 90
+    PinOut pinA1_RG(Port::_G, Pin::_6);               // 91
+    PinOut pinA2_RG(Port::_G, Pin::_3);               // 89
+    PinOut pinCLK_RG(Port::_G, Pin::_7);              // 92
+    PinOut pinWR_RG(Port::_G, Pin::_8);               // 93
+    PinOut pinDAT_RG(Port::_D, Pin::_13);             // 82    \todo Так ли это?
+    Pin    pinST_TB(Port::_F, Pin::_5, PinMode::In);  // 15    \todo Так ли это?
+}
+
 
 PinOut pPI_ENB_STM(Port::_D, Pin::_12);
 //Pin    pPI_TX;           // PB6  136
@@ -136,4 +140,13 @@ void HAL_PINS::Init()
     Commutator::pin20EN.Init();
     Commutator::pin20EP.Init();
     Commutator::pinENRGK.Init();
+
+    FPGA::pinLIMIT.Init();
+    FPGA::pinA0_RG.Init();
+    FPGA::pinA1_RG.Init();
+    FPGA::pinA2_RG.Init();
+    FPGA::pinCLK_RG.Init();
+    FPGA::pinWR_RG.Init();
+    FPGA::pinDAT_RG.Init();
+    FPGA::pinST_TB.Init();
 }
