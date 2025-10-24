@@ -35,7 +35,7 @@ void Commutator::Update()
 
         if (prev_state != state)
         {
-            ParserPCM::Send("PININ:%s:STATE %d", pin->name, state ? "1" : "0");
+            SCPI::Send("PININ:%s:STATE %d", pin->name, state ? "1" : "0");
         }
     }
 }

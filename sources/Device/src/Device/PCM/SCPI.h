@@ -3,7 +3,7 @@
 #include "Utils/String.h"
 
 
-namespace ParserPCM
+namespace SCPI
 {
     bool Parse(pchar);
 

@@ -47,7 +47,7 @@ bool PCM::ProcessInputBuffer()
         return false;
     }
 
-    ParserPCM::Parse(in_buffer.Data(pos_begin));
+    SCPI::Parse(in_buffer.Data(pos_begin));
 
     in_buffer.RemoveFirst(pos_end);
 

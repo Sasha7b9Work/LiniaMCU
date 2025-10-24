@@ -25,7 +25,7 @@
 */
 
 
-namespace ParserPCM
+namespace SCPI
 {
     struct StructParser
     {
@@ -60,13 +60,13 @@ namespace ParserPCM
 }
 
 
-bool ParserPCM::Parse(pchar command)
+bool SCPI::Parse(pchar command)
 {
     return ProcessStructures(command, head);
 }
 
 
-bool ParserPCM::Func_Ping(pchar command)
+bool SCPI::Func_Ping(pchar command)
 {
     if (*command != '\0')
     {
@@ -79,7 +79,7 @@ bool ParserPCM::Func_Ping(pchar command)
 }
 
 
-bool ParserPCM::ProcessStructures(pchar command, StructParser *handlers)
+bool SCPI::ProcessStructures(pchar command, StructParser *handlers)
 {
     if (command[0] == ':')
     {
@@ -116,7 +116,7 @@ bool ParserPCM::ProcessStructures(pchar command, StructParser *handlers)
 }
 
 
-bool ParserPCM::Func_FPGA_REG(pchar command)
+bool SCPI::Func_FPGA_REG(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -173,7 +173,7 @@ bool ParserPCM::Func_FPGA_REG(pchar command)
 }
 
 
-bool ParserPCM::Func_DAC(pchar command)
+bool SCPI::Func_DAC(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -230,7 +230,7 @@ bool ParserPCM::Func_DAC(pchar command)
 }
 
 
-bool ParserPCM::Func_REG(pchar command)
+bool SCPI::Func_REG(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -287,7 +287,7 @@ bool ParserPCM::Func_REG(pchar command)
 }
 
 
-void ParserPCM::Send(pchar format, ...)
+void SCPI::Send(pchar format, ...)
 {
     char message[1024];
     std::va_list args;
