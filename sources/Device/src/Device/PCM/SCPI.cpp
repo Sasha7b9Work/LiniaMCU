@@ -14,12 +14,18 @@
 /*
     :PING
 
-    :FPGA:REG[0...9]:LENGHT [1...32]
-    :FPGA:REG[0...9]:WRITE  [0....(uint)-1]
+    // Просто показать, как работает обработка структур
+    :CHIP:REG[0...9]:LENGTH [1...32]
 
+    // Управление регистрами ПЛИС
+    :FPGA[0...9]:LENGHT [1...32]
+    :FPGA[0...9]:WRITE  [0....(uint)-1]
+
+    // Управление ЦАПами блоков
     :DAC[0...9]:LENGTH [8...32]
     :DAC[0...9]:WRITE [0...(uint)-1]
 
+    // Управление регистрами блоков
     :REG[0...9]:LENGTH [8...32]
     :REG[0...9]:WRITE [0...(uint)-1]
 */
@@ -36,21 +42,23 @@ namespace SCPI
 
     static bool Func_Ping(pchar);
 
-    static bool Func_FPGA_REG(pchar);
+    static bool Func_CHIP_REG(pchar);
 
-    static StructParser fpga[] =
+    static StructParser chip[] =
     {
-        { "REG",   Func_FPGA_REG, nullptr },    // :FPGA:REG...
+        { "REG",   Func_CHIP_REG, nullptr },    // :CHIP:REG...
         { nullptr, nullptr,       nullptr }
     };
 
+    static bool Func_FPGA(pchar);
     static bool Func_DAC(pchar);
     static bool Func_REG(pchar);
 
     static StructParser head[] =
     {
         { "PING",  Func_Ping, nullptr },
-        { "FPGA",  nullptr,   fpga    },        // :FPGA...
+        { "CHIP",  nullptr,   chip    },
+        { "FPGA",  Func_FPGA, nullptr },
         { "DAC",   Func_DAC,  nullptr },
         { "REG",   Func_REG,  nullptr },
         { nullptr, nullptr,   nullptr }
@@ -116,7 +124,7 @@ bool SCPI::ProcessStructures(pchar command, StructParser *handlers)
 }
 
 
-bool SCPI::Func_FPGA_REG(pchar command)
+bool SCPI::Func_CHIP_REG(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -283,6 +291,12 @@ bool SCPI::Func_REG(pchar command)
         return false;
     }
 
+    return false;
+}
+
+
+bool SCPI::Func_FPGA(pchar)
+{
     return false;
 }
 

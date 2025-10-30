@@ -32,20 +32,23 @@ void BufferOSDP::Allocate(int new_capacity)
     if (size)
     {
         temp = (char *)std::malloc((uint)capacity);
-        std::memcpy(temp, buffer, (uint)capacity);
+        if (temp)
+        {
+            std::memcpy(temp, buffer, (uint)capacity);
+        }
     }
 
     std::free(buffer);
 
     buffer = (char *)std::malloc((uint)new_capacity);
-    std::memset(buffer, 0, (uint)new_capacity);
-    std::memcpy(buffer, temp, (uint)capacity);
+    if (buffer && temp)
+    {
+        std::memset(buffer, 0, (uint)new_capacity);
+        std::memcpy(buffer, temp, (uint)capacity);
+    }
     capacity = new_capacity;
 
-    if (temp)
-    {
-        std::free(temp);
-    }
+    std::free(temp);
 }
 
 
