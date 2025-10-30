@@ -124,7 +124,7 @@ bool SCPI::ProcessStructures(pchar command, StructParser *handlers)
 }
 
 
-bool SCPI::Func_CHIP_REG(pchar command)
+bool SCPI::Func_FPGA(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -295,7 +295,7 @@ bool SCPI::Func_REG(pchar command)
 }
 
 
-bool SCPI::Func_FPGA(pchar)
+bool SCPI::Func_CHIP_REG(pchar)
 {
     return false;
 }
