@@ -169,6 +169,8 @@ bool SCPI::Func_FPGA(pchar command)
 
         if (SU::CharIs(*pos, " :"))
         {
+            LOG_WRITE("Write %08X to FPGA%d", value, num_reg);
+
             FPGA::Reg::Write(num_reg, value);
 
             return true;
@@ -226,6 +228,8 @@ bool SCPI::Func_DAC(pchar command)
 
         if (SU::CharIs(*pos, " :"))
         {
+            LOG_WRITE("Write %08X to DAC%d", value, num_dac);
+
             dacs[num_dac].Write(value);
 
             return true;
@@ -283,6 +287,8 @@ bool SCPI::Func_REG(pchar command)
 
         if (SU::CharIs(*pos, " :"))
         {
+            LOG_WRITE("Write %08X to REG%d", value, num_reg);
+
             regs[num_reg].Write(value);
 
             return true;
