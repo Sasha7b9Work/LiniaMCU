@@ -2,11 +2,12 @@
 #include "defines.h"
 #include "Device/Device.h"
 #include "Device/Commutator.h"
+#include "Device/FPGA.h"
 
 
 void Device::Init()
 {
-
+    FPGA::Init();
 }
 
 
