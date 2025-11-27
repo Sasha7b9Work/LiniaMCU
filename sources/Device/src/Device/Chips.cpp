@@ -95,11 +95,11 @@ void ChipDAC::SetLength(E type, uint l)
 
 void ChipDAC::Write(E type, uint value)
 {
-    dacs[type].Write(value);
+    dacs[type].WriteValue(value);
 }
 
 
-void ChipDAC::Write(uint value)
+void ChipDAC::WriteValue(uint value)
 {
     clk->ToLow();
 
@@ -128,5 +128,11 @@ void ChipREG::SetLength(E type, uint l)
 
 void ChipREG::Write(E type, uint value)
 {
-    regs[type].ChipDAC::Write(value);
+    regs[type].ChipDAC::WriteValue(value);
+}
+
+
+ChipREG &ChipREG::GetReg(E type)
+{
+    return regs[type];
 }

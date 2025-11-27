@@ -8,9 +8,9 @@
 
 namespace Commutator
 {
-    static const ChipREG::E REG = ChipREG::COMMUTATOR;
-
     void Init();
 
     void Update();
+
+    extern ChipREG &REG;
 }
