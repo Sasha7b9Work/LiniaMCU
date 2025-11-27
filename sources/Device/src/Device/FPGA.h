@@ -15,13 +15,4 @@ namespace FPGA
         void SetLength(int num, uint length);
         void Write(int num, uint value);
     }
-
-    extern PinIn  pinLIMIT;
-    extern PinOut pinA0_RG;
-    extern PinOut pinA1_RG;
-    extern PinOut pinA2_RG;
-    extern PinOut pinCLK_RG;
-    extern PinOut pinWR_RG;
-    extern PinOut pinDAT_RG;
-    extern Pin    pinST_TB;
 }

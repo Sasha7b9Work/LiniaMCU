@@ -4,19 +4,6 @@
 #include <stm32f4xx_hal.h>
 
 
-namespace FPGA
-{
-    PinIn  pinLIMIT(Port::_E, Pin::_7);               // 58
-    PinOut pinA0_RG(Port::_G, Pin::_5);               // 90
-    PinOut pinA1_RG(Port::_G, Pin::_6);               // 91
-    PinOut pinA2_RG(Port::_G, Pin::_3);               // 89
-    PinOut pinCLK_RG(Port::_G, Pin::_7);              // 92
-    PinOut pinWR_RG(Port::_G, Pin::_8);               // 93
-    PinOut pinDAT_RG(Port::_D, Pin::_13);             // 82    \todo Так ли это?
-    Pin    pinST_TB(Port::_F, Pin::_5, PinMode::In);  // 15    \todo Так ли это?
-}
-
-
 PinOut pDAT1_DAC(Port::_D, Pin::_8);
 PinOut pCLK1_DAC(Port::_D, Pin::_11);
 
@@ -112,17 +99,4 @@ void PinOut::ToLow()
 void PinOut::ToHi()
 {
     Set(true);
-}
-
-
-void HAL_PINS::Init()
-{
-    FPGA::pinLIMIT.Init();
-    FPGA::pinA0_RG.Init();
-    FPGA::pinA1_RG.Init();
-    FPGA::pinA2_RG.Init();
-    FPGA::pinCLK_RG.Init();
-    FPGA::pinWR_RG.Init();
-    FPGA::pinDAT_RG.Init();
-    FPGA::pinST_TB.Init();
 }

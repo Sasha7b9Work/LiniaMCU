@@ -106,12 +106,6 @@ struct StructPinIn
 };
 
 
-namespace HAL_PINS
-{
-    void Init();
-}
-
-
 //------------------ Канал базы, канал подложки
 extern PinOut pDAT1_DAC;        // PD8  77
 extern PinOut pCLK1_DAC;        // PD11 80

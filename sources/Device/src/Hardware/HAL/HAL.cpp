@@ -21,8 +21,6 @@ void HAL::Init()
 
     HAL_Init();
 
-    HAL_PINS::Init();
-
     HAL_USART1::Init();
 }
 
