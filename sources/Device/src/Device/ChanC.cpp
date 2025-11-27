@@ -6,10 +6,10 @@
 
 namespace ChanC
 {
-    PinOut pinRAZV_ENDU(Port::_C, Pin::_15);     //   9 Разрешение измерителя U блока развёртки
-    PinOut pinRAZV_ENRGF(Port::_F, Pin::_0);     //  10 Разрешение регистра
+           PinOut pinRAZV_ENDU(Port::_C, Pin::_15);     //   9 Разрешение измерителя U блока развёртки
+           PinOut pinRAZV_ENRGF(Port::_F, Pin::_0);     //  10 Разрешение регистра
 
-    PinOut pinMEAS_I_ENRGI(Port::_F, Pin::_1);   //  11 Выбор регистра диапазона тока
+           PinOut pinMEAS_I_ENRGI(Port::_F, Pin::_1);   //  11 Выбор регистра диапазона тока
     static PinOut pinMEAS_I_SPEED(Port::_G, Pin::_11);  // 126
 }
 
