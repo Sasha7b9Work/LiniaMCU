@@ -76,5 +76,5 @@ void Log::WriteLine(char *line)
         pointer++;
     }
 
-    SCPI::Send(line);
+    PCM::SCPI::Send(line);
 }

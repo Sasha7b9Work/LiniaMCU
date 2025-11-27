@@ -29,7 +29,7 @@ void Commutator::Update()
 
         if (prev_state != state)
         {
-            SCPI::Send("PININ:%s:STATE %d", pin->name, state ? "1" : "0");
+            PCM::SCPI::Send("PININ:%s:STATE %d", pin->name, state ? "1" : "0");
         }
         
         pin++;

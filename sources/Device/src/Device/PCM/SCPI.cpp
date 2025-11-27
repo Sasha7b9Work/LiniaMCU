@@ -31,50 +31,53 @@
 */
 
 
-namespace SCPI
+namespace PCM
 {
-    struct StructParser
+    namespace SCPI
     {
-        pchar         begin_string;
-        bool          (*func)(pchar);
-        StructParser *structs;
-    };
+        struct StructParser
+        {
+            pchar         begin_string;
+            bool          (*func)(pchar);
+            StructParser *structs;
+        };
 
-    static bool Func_Ping(pchar);
+        static bool Func_Ping(pchar);
 
-    static bool Func_CHIP_REG(pchar);
+        static bool Func_CHIP_REG(pchar);
 
-    static StructParser chip[] =
-    {
-        { "REG",   Func_CHIP_REG, nullptr },    // :CHIP:REG...
-        { nullptr, nullptr,       nullptr }
-    };
+        static StructParser chip[] =
+        {
+            { "REG",   Func_CHIP_REG, nullptr },    // :CHIP:REG...
+            { nullptr, nullptr,       nullptr }
+        };
 
-    static bool Func_FPGA(pchar);
-    static bool Func_DAC(pchar);
-    static bool Func_REG(pchar);
+        static bool Func_FPGA(pchar);
+        static bool Func_DAC(pchar);
+        static bool Func_REG(pchar);
 
-    static StructParser head[] =
-    {
-        { "PING",  Func_Ping, nullptr },
-        { "CHIP",  nullptr,   chip    },
-        { "FPGA",  Func_FPGA, nullptr },
-        { "DAC",   Func_DAC,  nullptr },
-        { "REG",   Func_REG,  nullptr },
-        { nullptr, nullptr,   nullptr }
-    };
+        static StructParser head[] =
+        {
+            { "PING",  Func_Ping, nullptr },
+            { "CHIP",  nullptr,   chip    },
+            { "FPGA",  Func_FPGA, nullptr },
+            { "DAC",   Func_DAC,  nullptr },
+            { "REG",   Func_REG,  nullptr },
+            { nullptr, nullptr,   nullptr }
+        };
 
-    static bool ProcessStructures(pchar, StructParser *);
+        static bool ProcessStructures(pchar, StructParser *);
+    }
 }
 
 
-bool SCPI::Parse(pchar command)
+bool PCM::SCPI::Parse(pchar command)
 {
     return ProcessStructures(command, head);
 }
 
 
-bool SCPI::Func_Ping(pchar command)
+bool PCM::SCPI::Func_Ping(pchar command)
 {
     if (*command != '\0')
     {
@@ -87,7 +90,7 @@ bool SCPI::Func_Ping(pchar command)
 }
 
 
-bool SCPI::ProcessStructures(pchar command, StructParser *handlers)
+bool PCM::SCPI::ProcessStructures(pchar command, StructParser *handlers)
 {
     if (command[0] == ':')
     {
@@ -124,7 +127,7 @@ bool SCPI::ProcessStructures(pchar command, StructParser *handlers)
 }
 
 
-bool SCPI::Func_FPGA(pchar command)
+bool PCM::SCPI::Func_FPGA(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -183,7 +186,7 @@ bool SCPI::Func_FPGA(pchar command)
 }
 
 
-bool SCPI::Func_DAC(pchar command)
+bool PCM::SCPI::Func_DAC(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -242,7 +245,7 @@ bool SCPI::Func_DAC(pchar command)
 }
 
 
-bool SCPI::Func_REG(pchar command)
+bool PCM::SCPI::Func_REG(pchar command)
 {
     if (*command < '0' || *command > '9')
     {
@@ -301,13 +304,13 @@ bool SCPI::Func_REG(pchar command)
 }
 
 
-bool SCPI::Func_CHIP_REG(pchar)
+bool PCM::SCPI::Func_CHIP_REG(pchar)
 {
     return false;
 }
 
 
-void SCPI::Send(pchar format, ...)
+void PCM::SCPI::Send(pchar format, ...)
 {
     char message[1024];
     std::va_list args;

@@ -3,9 +3,12 @@
 #include "Utils/String.h"
 
 
-namespace SCPI
+namespace PCM
 {
-    bool Parse(pchar);
+    namespace SCPI
+    {
+        bool Parse(pchar);
 
-    void Send(pchar format, ...);
+        void Send(pchar format, ...);
+    }
 }
