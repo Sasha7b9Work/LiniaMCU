@@ -18,12 +18,6 @@ namespace Commutator
 }
 
 
-void Commutator::Init()
-{
-
-}
-
-
 void Commutator::Update()
 {
     StructPinIn *pin = &pins[0];

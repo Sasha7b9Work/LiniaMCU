@@ -3,7 +3,6 @@
 #include "Device/PCM/PCM.h"
 #include "Utils/BufferOSDP.h"
 #include "Hardware/HAL/HAL.h"
-#include "Utils/String.h"
 #include "Device/PCM/SCPI.h"
 
 
@@ -12,15 +11,18 @@ namespace PCM
     static BufferOSDP in_buffer(1024);
 
     static bool ProcessInputBuffer();
-}
 
-
-void PCM::Init()
-{
+    static void UpdateInput();
 }
 
 
 void PCM::Update()
+{
+    UpdateInput();
+}
+
+
+void PCM::UpdateInput()
 {
     HAL_USART1::GetData(in_buffer);
 

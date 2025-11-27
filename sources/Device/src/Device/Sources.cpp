@@ -2,8 +2,3 @@
 #include "defines.h"
 #include "Device/Sources.h"
 
-
-void Source50V::Init()
-{
-
-}

@@ -7,7 +7,5 @@
 
 namespace PCM
 {
-    void Init();
-
     void Update();
 }

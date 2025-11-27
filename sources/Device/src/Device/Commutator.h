@@ -7,8 +7,6 @@
 
 namespace Commutator
 {
-    void Init();
-
     void Update();
 
     extern PinIn  pin3000VE;

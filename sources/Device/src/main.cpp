@@ -13,13 +13,7 @@ int main()
 
     HAL_TIM::Delay(500);
 
-    Commutator::Init();
-
-    Source50V::Init();
-
     FPGA::Init();
-
-    PCM::Init();
 
     while (true)
     {
