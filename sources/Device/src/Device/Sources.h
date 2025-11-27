@@ -7,8 +7,7 @@
 
 namespace Source50V
 {
-    extern PinOut pin50EP;
-    extern PinOut pin50EN;
+    void Init();
 }
 
 

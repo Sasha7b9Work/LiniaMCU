@@ -31,13 +31,6 @@ namespace ChanC
 }
 
 
-namespace Source50V
-{
-    PinOut pin50EP(Port::_A, Pin::_6);      // 42
-    PinOut pin50EN(Port::_F, Pin::_11);     // 49
-}
-
-
 namespace Commutator
 {
     PinIn  pin3000VE(Port::_C, Pin::_4);     // 44
@@ -168,9 +161,6 @@ void PinOut::ToHi()
 
 void HAL_PINS::Init()
 {
-    Source50V::pin50EN.Init();
-    Source50V::pin50EP.Init();
-
     Source3kV::pinENRGV.Init();
 
     Commutator::pin3000VE.Init();

@@ -3,11 +3,14 @@
 #include "Device/Device.h"
 #include "Device/Commutator.h"
 #include "Device/FPGA.h"
+#include "Device/Sources.h"
 
 
 void Device::Init()
 {
     FPGA::Init();
+
+    Source50V::Init();
 }
 
 
