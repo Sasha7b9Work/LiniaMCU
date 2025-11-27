@@ -4,14 +4,6 @@
 #include <stm32f4xx_hal.h>
 
 
-namespace ChanS
-{
-    PinOut pinEND1P(Port::_C, Pin::_0);     // 26
-    PinOut pinEND2P(Port::_F, Pin::_10);    // 22
-    PinOut pinENRGP(Port::_F, Pin::_9);     // 21
-}
-
-
 namespace ChanC
 {
     PinOut pinRAZV_ENDU(Port::_C, Pin::_15);      //  9
@@ -161,10 +153,6 @@ void HAL_PINS::Init()
     FPGA::pinWR_RG.Init();
     FPGA::pinDAT_RG.Init();
     FPGA::pinST_TB.Init();
-
-    ChanS::pinEND1P.Init();
-    ChanS::pinEND2P.Init();
-    ChanS::pinENRGP.Init();
 
     ChanC::pinRAZV_ENDU.Init();
     ChanC::pinRAZV_ENRGF.Init();

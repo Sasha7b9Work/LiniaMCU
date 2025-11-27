@@ -16,6 +16,8 @@ void Device::Init()
     Source3kV::Init();
 
     ChanB::Init();
+
+    ChanS::Init();
 }
 
 

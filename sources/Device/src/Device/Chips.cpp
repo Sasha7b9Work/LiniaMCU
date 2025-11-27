@@ -29,6 +29,14 @@ namespace ChanB
 }
 
 
+namespace ChanS
+{
+    extern PinOut pinEND1P;
+    extern PinOut pinEND2P;
+    extern PinOut pinENRGP;
+}
+
+
 namespace Source3kV
 {
     extern PinOut pinENRGV;
