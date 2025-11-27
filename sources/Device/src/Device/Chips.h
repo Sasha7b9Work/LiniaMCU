@@ -28,6 +28,17 @@ protected:
 
 struct ChipDAC : public Chip
 {
+    enum E
+    {
+        CHAN_C_PCM,
+        CHAN_C_RANGE,
+        CHAN_B_1,
+        CHAN_B_2,
+        CHAN_S_1,
+        CHAN_S_2,
+        SOURCE_50V
+    };
+
     ChipDAC(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_dat) : Chip(_l, _cs, _clk), dat(_dat) { }
 
     void Write(uint);
@@ -40,6 +51,16 @@ private:
 
 struct ChipREG : public ChipDAC
 {
+    enum E
+    {
+        SOURCE_3kV,
+        COMMUTATOR,
+        CHAN_C,
+        CHAN_B,
+        CHAN_S,
+        MEAS_I
+    };
+
     ChipREG(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_dat) : ChipDAC(_l, _cs, _clk, _dat) { }
 };
 
