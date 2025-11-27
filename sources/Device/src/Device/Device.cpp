@@ -18,6 +18,8 @@ void Device::Init()
     ChanB::Init();
 
     ChanS::Init();
+
+    ChanC::Init();
 }
 
 

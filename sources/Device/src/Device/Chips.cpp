@@ -37,6 +37,14 @@ namespace ChanS
 }
 
 
+namespace ChanC
+{
+    extern PinOut pinRAZV_ENDU;
+    extern PinOut pinRAZV_ENRGF;
+    extern PinOut pinMEAS_I_ENRGI;
+}
+
+
 namespace Source3kV
 {
     extern PinOut pinENRGV;

@@ -4,16 +4,6 @@
 #include <stm32f4xx_hal.h>
 
 
-namespace ChanC
-{
-    PinOut pinRAZV_ENDU(Port::_C, Pin::_15);      //  9
-    PinOut pinRAZV_ENRGF(Port::_F, Pin::_0);      // 10
-
-    PinOut pinMEAS_I_ENRGI(Port::_F, Pin::_1);    // 11
-    PinOut pinMEAS_I_SPEED(Port::_G, Pin::_11);   // 126
-}
-
-
 namespace Commutator
 {
     PinIn  pin3000VE(Port::_C, Pin::_4);     // 44
@@ -153,9 +143,4 @@ void HAL_PINS::Init()
     FPGA::pinWR_RG.Init();
     FPGA::pinDAT_RG.Init();
     FPGA::pinST_TB.Init();
-
-    ChanC::pinRAZV_ENDU.Init();
-    ChanC::pinRAZV_ENRGF.Init();
-    ChanC::pinMEAS_I_ENRGI.Init();
-    ChanC::pinMEAS_I_SPEED.Init();
 }

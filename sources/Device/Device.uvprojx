@@ -1058,6 +1058,11 @@
               <FileType>8</FileType>
               <FilePath>.\src\Device\ChanS.cpp</FilePath>
             </File>
+            <File>
+              <FileName>ChanC.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\ChanC.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2308,6 +2313,11 @@
               <FileName>ChanS.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\ChanS.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ChanC.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\ChanC.cpp</FilePath>
             </File>
           </Files>
         </Group>
