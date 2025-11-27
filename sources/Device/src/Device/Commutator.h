@@ -7,12 +7,7 @@
 
 namespace Commutator
 {
-    void Update();
+    void Init();
 
-    extern PinIn  pin3000VE;
-    extern PinIn  pin200EN;
-    extern PinIn  pin200EP;
-    extern PinIn  pin20EN;
-    extern PinIn  pin20EP;
-    extern PinOut pinENRGK;
+    void Update();
 }

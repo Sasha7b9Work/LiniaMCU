@@ -11,6 +11,8 @@ void Device::Init()
 {
     FPGA::Init();
 
+    Commutator::Init();
+
     Source50V::Init();
 
     Source3kV::Init();

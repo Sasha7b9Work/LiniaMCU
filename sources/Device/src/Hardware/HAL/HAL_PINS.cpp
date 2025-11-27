@@ -4,17 +4,6 @@
 #include <stm32f4xx_hal.h>
 
 
-namespace Commutator
-{
-    PinIn  pin3000VE(Port::_C, Pin::_4);     // 44
-    PinIn  pin200EN(Port::_C, Pin::_5);      // 45
-    PinIn  pin200EP(Port::_B, Pin::_0);      // 46
-    PinIn  pin20EN(Port::_B, Pin::_1);       // 47
-    PinIn  pin20EP(Port::_B, Pin::_2);       // 48
-    PinOut pinENRGK(Port::_F, Pin::_7);      // 19
-}
-
-
 namespace FPGA
 {
     PinIn  pinLIMIT(Port::_E, Pin::_7);               // 58
@@ -128,13 +117,6 @@ void PinOut::ToHi()
 
 void HAL_PINS::Init()
 {
-    Commutator::pin3000VE.Init();
-    Commutator::pin200EN.Init();
-    Commutator::pin200EP.Init();
-    Commutator::pin20EN.Init();
-    Commutator::pin20EP.Init();
-    Commutator::pinENRGK.Init();
-
     FPGA::pinLIMIT.Init();
     FPGA::pinA0_RG.Init();
     FPGA::pinA1_RG.Init();

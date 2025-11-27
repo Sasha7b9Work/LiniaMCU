@@ -51,6 +51,12 @@ namespace Source3kV
 }
 
 
+namespace Commutator
+{
+    extern PinOut pinENRGK;
+}
+
+
 ChipDAC dacs[10] =
 {   //      cs                    clk         dat
     { 12, nullptr,              nullptr,    nullptr    },  // 0 Канал C. Управляется с PCM
