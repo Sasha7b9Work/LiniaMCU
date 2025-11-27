@@ -57,7 +57,7 @@ namespace Commutator
 }
 
 
-ChipDAC dacs[10] =
+ChipDAC ChipDAC::dacs[10] =
 {   //      cs                    clk         dat
     { 12, nullptr,              nullptr,    nullptr    },  // 0 Канал C. Управляется с PCM
     { 12, &ChanC::pinRAZV_ENDU, &pCLK2_DAC, &pDAT2_DAC },  // 1 Канал C. Диапазон
@@ -72,7 +72,7 @@ ChipDAC dacs[10] =
 };
 
 
-ChipREG regs[10] =
+ChipREG ChipREG::regs[10] =
 {
     { 24, &Source3kV::pinENRGV,    &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
     { 16, &Commutator::pinENRGK,   &pCLK2_DAC, &pDAT2_DAC },  // 1 Коммутатор
@@ -85,6 +85,18 @@ ChipREG regs[10] =
     { 0,  nullptr,                 nullptr,    nullptr },
     { 0,  nullptr,                 nullptr,    nullptr }
 };
+
+
+void ChipDAC::SetLength(E type, uint l)
+{
+    dacs[type].Chip::SetLength(l);
+}
+
+
+void ChipDAC::Write(E type, uint value)
+{
+    dacs[type].Write(value);
+}
 
 
 void ChipDAC::Write(uint value)
@@ -105,4 +117,16 @@ void ChipDAC::Write(uint value)
     cs->ToHi();
 
     clk->ToLow();
+}
+
+
+void ChipREG::SetLength(E type, uint l)
+{
+    regs[type].Chip::SetLength(l);
+}
+
+
+void ChipREG::Write(E type, uint value)
+{
+    regs[type].ChipDAC::Write(value);
 }

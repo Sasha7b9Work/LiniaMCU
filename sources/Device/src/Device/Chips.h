@@ -43,9 +43,16 @@ struct ChipDAC : public Chip
 
     void Write(uint);
 
+    static void SetLength(E, uint);
+    static void Write(E, uint);
+
 private:
 
     PinOut *dat;
+
+private:
+
+    static ChipDAC dacs[10];
 };
 
 
@@ -62,8 +69,11 @@ struct ChipREG : public ChipDAC
     };
 
     ChipREG(uint _l, PinOut *_cs, PinOut *_clk, PinOut *_dat) : ChipDAC(_l, _cs, _clk, _dat) { }
+
+    static void SetLength(E, uint);
+    static void Write(E, uint);
+
+private:
+
+    static ChipREG regs[10];
 };
-
-
-extern ChipDAC dacs[10];
-extern ChipREG regs[10];
