@@ -6,12 +6,12 @@
 
 namespace Commutator
 {
-    static PinIn  pin3000VE(Port::_C, Pin::_4);     // 44
-    static PinIn  pin200EN(Port::_C, Pin::_5);      // 45
-    static PinIn  pin200EP(Port::_B, Pin::_0);      // 46
-    static PinIn  pin20EN(Port::_B, Pin::_1);       // 47
-    static PinIn  pin20EP(Port::_B, Pin::_2);       // 48
-    PinOut pinENRGK(Port::_F, Pin::_7);      // 19
+    static PinIn pin3000VE(Port::_C, Pin::_4);     // 44
+    static PinIn pin200EN(Port::_C, Pin::_5);      // 45
+    static PinIn pin200EP(Port::_B, Pin::_0);      // 46
+    static PinIn pin20EN(Port::_B, Pin::_1);       // 47
+    static PinIn pin20EP(Port::_B, Pin::_2);       // 48
+                 PinOut pinENRGK(Port::_F, Pin::_7);      // 19
 
     static StructPinIn pins[] =
     {
