@@ -994,16 +994,6 @@
           <GroupName>Device</GroupName>
           <Files>
             <File>
-              <FileName>Device.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\Device.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Device.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\Device.h</FilePath>
-            </File>
-            <File>
               <FileName>FPGA.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Device\FPGA.cpp</FilePath>
@@ -2234,16 +2224,6 @@
         <Group>
           <GroupName>Device</GroupName>
           <Files>
-            <File>
-              <FileName>Device.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Device\Device.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Device.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Device\Device.h</FilePath>
-            </File>
             <File>
               <FileName>FPGA.cpp</FileName>
               <FileType>8</FileType>

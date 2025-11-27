@@ -2,7 +2,10 @@
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
 #include "Hardware/Timer.h"
-#include "Device/Device.h"
+#include "Device/Commutator.h"
+#include "Device/Sources.h"
+#include "Device/FPGA.h"
+#include "Device/PCM/PCM.h"
 #include <cstring>
 
 
@@ -15,10 +18,18 @@ int main()
 
     HAL_TIM::Delay(500);
 
-    Device::Init();
+    Commutator::Init();
 
-    while (1)
+    Source50V::Init();
+
+    FPGA::Init();
+
+    PCM::Init();
+
+    while (true)
     {
-        Device::Update();
+        Commutator::Update();
+
+        PCM::Update();
     }
 }
