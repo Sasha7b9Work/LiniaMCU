@@ -1038,6 +1038,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\Device\Sources.h</FilePath>
             </File>
+            <File>
+              <FileName>Device.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Device.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Device.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Device.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2268,6 +2278,16 @@
               <FileName>Sources.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Device\Sources.h</FilePath>
+            </File>
+            <File>
+              <FileName>Device.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Device\Device.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Device.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Device\Device.h</FilePath>
             </File>
           </Files>
         </Group>

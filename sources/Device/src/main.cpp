@@ -5,6 +5,7 @@
 #include "Device/Sources.h"
 #include "Device/FPGA.h"
 #include "Device/PCM/PCM.h"
+#include "Device/Device.h"
 
 
 int main()
@@ -13,12 +14,14 @@ int main()
 
     HAL_TIM::Delay(500);
 
+    Device::Init();
+
     FPGA::Init();
 
     while (true)
     {
-        Commutator::Update();
-
         PCM::Update();
+
+        Device::Update();
     }
 }

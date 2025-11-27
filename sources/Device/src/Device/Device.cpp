@@ -1,0 +1,16 @@
+// 2025/11/27 15:47:35 (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
+#include "defines.h"
+#include "Device/Device.h"
+#include "Device/Commutator.h"
+
+
+void Device::Init()
+{
+
+}
+
+
+void Device::Update()
+{
+    Commutator::Update();
+}
