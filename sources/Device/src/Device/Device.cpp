@@ -4,6 +4,7 @@
 #include "Device/Commutator.h"
 #include "Device/FPGA.h"
 #include "Device/Sources.h"
+#include "Device/Channels.h"
 
 
 void Device::Init()
@@ -11,6 +12,10 @@ void Device::Init()
     FPGA::Init();
 
     Source50V::Init();
+
+    Source3kV::Init();
+
+    ChanB::Init();
 }
 
 

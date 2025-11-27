@@ -8,10 +8,7 @@
 // Канал базы
 namespace ChanB
 {
-    extern PinOut pin3_50_V;        // Определяет режим высокого напряжения/режим большого тока
-    extern PinOut pinEND1B;         // Разрешение DAC
-    extern PinOut pinEND2B;         // Разрешение DAC
-    extern PinOut pinENRGB;         // Разрешение регистра
+    void Init();
 }
 
 

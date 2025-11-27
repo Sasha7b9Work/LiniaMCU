@@ -21,6 +21,20 @@
 */
 
 
+namespace ChanB
+{
+    extern PinOut pinEND1B;
+    extern PinOut pinEND2B;
+    extern PinOut pinENRGB;
+}
+
+
+namespace Source3kV
+{
+    extern PinOut pinENRGV;
+}
+
+
 ChipDAC dacs[10] =
 {   //      cs                    clk         dat
     { 12, nullptr,              nullptr,    nullptr    },  // 0 Канал C. Управляется с PCM
@@ -38,7 +52,7 @@ ChipDAC dacs[10] =
 
 ChipREG regs[10] =
 {
-    { 24, Source3kV::GetPinENRGV(),&pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
+    { 24, &Source3kV::pinENRGV,    &pCLK2_DAC, &pDAT2_DAC },  // 0 Источник 3кВ
     { 16, &Commutator::pinENRGK,   &pCLK2_DAC, &pDAT2_DAC },  // 1 Коммутатор
     { 32, &ChanC::pinRAZV_ENRGF,   &pCLK2_DAC, &pDAT2_DAC },  // 2 Формирователь развёртки
     { 32, &ChanB::pinENRGB,        &pCLK1_DAC, &pDAT1_DAC },  // 3 Канал B

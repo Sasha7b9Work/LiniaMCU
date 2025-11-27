@@ -16,6 +16,4 @@ namespace Source50V
 namespace Source3kV
 {
     void Init();
-
-    PinOut *GetPinENRGV();
 }

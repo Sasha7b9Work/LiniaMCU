@@ -4,15 +4,6 @@
 #include <stm32f4xx_hal.h>
 
 
-namespace ChanB
-{
-    PinOut pin3_50_V(Port::_G, Pin::_11);   // 57
-    PinOut pinEND1B(Port::_C, Pin::_3);     // 29
-    PinOut pinEND2B(Port::_C, Pin::_2);     // 28
-    PinOut pinENRGB(Port::_C, Pin::_1);     // 27
-}
-
-
 namespace ChanS
 {
     PinOut pinEND1P(Port::_C, Pin::_0);     // 26
@@ -170,11 +161,6 @@ void HAL_PINS::Init()
     FPGA::pinWR_RG.Init();
     FPGA::pinDAT_RG.Init();
     FPGA::pinST_TB.Init();
-
-    ChanB::pin3_50_V.Init();
-    ChanB::pinEND1B.Init();
-    ChanB::pinEND2B.Init();
-    ChanB::pinENRGB.Init();
 
     ChanS::pinEND1P.Init();
     ChanS::pinEND2P.Init();
