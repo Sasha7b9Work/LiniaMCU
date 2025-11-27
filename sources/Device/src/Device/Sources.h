@@ -15,5 +15,7 @@ namespace Source50V
 
 namespace Source3kV
 {
-    extern PinOut pinENRGV; // Разрешение регистра источника напряжения 3кВ
+    void Init();
+
+    PinOut *GetPinENRGV();
 }

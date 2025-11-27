@@ -42,12 +42,6 @@ namespace Commutator
 }
 
 
-namespace Source3kV
-{
-    PinOut pinENRGV(Port::_F, Pin::_8);     // 20
-}
-
-
 namespace FPGA
 {
     PinIn  pinLIMIT(Port::_E, Pin::_7);               // 58
@@ -161,8 +155,6 @@ void PinOut::ToHi()
 
 void HAL_PINS::Init()
 {
-    Source3kV::pinENRGV.Init();
-
     Commutator::pin3000VE.Init();
     Commutator::pin200EN.Init();
     Commutator::pin200EP.Init();

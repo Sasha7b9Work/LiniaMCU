@@ -11,8 +11,25 @@ namespace Source50V
 }
 
 
+namespace Source3kV
+{
+    static PinOut pinENRGV(Port::_F, Pin::_8);      // 20 Разрешение регистра источника напряжения 3кВ
+
+    PinOut *GetPinENRGV()
+    {
+        return &pinENRGV;
+    }
+}
+
+
 void Source50V::Init()
 {
     pin50EP.Init();
     pin50EN.Init();
+}
+
+
+void Source3kV::Init()
+{
+    pinENRGV.Init();
 }
