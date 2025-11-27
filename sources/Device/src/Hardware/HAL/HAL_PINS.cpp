@@ -68,10 +68,6 @@ namespace FPGA
 }
 
 
-PinOut pPI_ENB_STM(Port::_D, Pin::_12);
-//Pin    pPI_TX;           // PB6  136
-//Pin    pPI_RX;           // PA10 102
-
 PinOut pDAT1_DAC(Port::_D, Pin::_8);
 PinOut pCLK1_DAC(Port::_D, Pin::_11);
 

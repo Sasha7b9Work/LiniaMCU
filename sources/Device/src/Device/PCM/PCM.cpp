@@ -4,10 +4,15 @@
 #include "Utils/BufferOSDP.h"
 #include "Hardware/HAL/HAL.h"
 #include "Device/PCM/SCPI.h"
+#include "Hardware/HAL/HAL_PINS.h"
 
 
 namespace PCM
 {
+    static PinOut pPI_ENB_STM(Port::_D, Pin::_12);  // PD12 81
+    //Pin    pPI_TX;                                // PB6  136
+    //Pin    pPI_RX;                                // PA10 102
+
     static BufferOSDP in_buffer(1024);
 
     static bool ProcessInputBuffer();
